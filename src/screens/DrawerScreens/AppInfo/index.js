@@ -1,10 +1,12 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Text } from 'react-native';
 
-// import { Container } from './styles';
+import { Container } from './styles';
 
 export default function AppInfo() {
   return (
-    <View />
+    <Container>
+      <Text>AppInfo</Text>
+    </Container>
   );
 }

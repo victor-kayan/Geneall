@@ -3,6 +3,7 @@ import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
+import SideBar from './components/SideBar';
 import {
   AppInfo,
   Books,
@@ -20,10 +21,7 @@ export default function Routes() {
       <StatusBar barStyle="light-content" />
       <Drawer.Navigator 
         initialRouteName="Home"
-        screenOptions={{
-          headerStyle: { backgroundColor: '#7156C1' },
-          headerTintColor: '#FFF'
-        }}
+        drawerContent={ props => <SideBar {...props} /> }
       >
         <Drawer.Screen 
           name="Home" 
