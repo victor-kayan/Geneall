@@ -39,7 +39,7 @@ export default function Routes() {
           options={{ drawerLabel: "Genética da Transmissão" }} 
         />
         <Drawer.Screen 
-          name="Cytogenetics" 
+          name="Cytogenetic" 
           component={Cytogenetics} 
           options={{ drawerLabel: "Citogenética" }} 
         />

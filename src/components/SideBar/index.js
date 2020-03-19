@@ -29,9 +29,17 @@ const routesData = [
     icon: "transition"
   }, {
     name: "Citogenética",
-    route: "Cytogenetics",
+    route: "Cytogenetic",
     icon: "microscope"
-  }, 
+  }, {
+    name: "Indicações de Livros",
+    route: "Books",
+    icon: "library-books"
+  }, {
+    name: "Sobre o Aplicativo",
+    route: "AppInfo",
+    icon: "information-outline"
+  },
 ];
 
 export default class SideBar extends Component {
@@ -58,45 +66,27 @@ export default class SideBar extends Component {
           </ImageBackground>
 
           <View>
-            {routesData && Object.keys(routesData).length
+            { routesData && Object.keys(routesData).length
               ? routesData.map(data => (
-                <CardItem
-                key={data.name}
-                button
-                noBorder
-                onPress={() => this.props.navigation.navigate(data.route)}
-                >
+                <>
+                  <CardItem
+                    key={data.name}
+                    button
+                    noBorder
+                    onPress={() => this.props.navigation.navigate(data.route)}
+                  >
                     <Left>
                       <Icon name={data.icon} size={30} color={Colors.PRIMARY} />
                       <Text style={styles.text}>{data.name}</Text>
                     </Left>
                   </CardItem>
+                  
+                  { data.route === 'Home' || data.route === 'Cytogenetic' ? 
+                    <View style={styles.separator}/>
+                  : null }
+                </>
                 ))
-              : null}
-              
-            <View style={styles.separator}/>
-            
-            <CardItem 
-              button 
-              noBorder 
-              onPress={() => this.props.navigation.navigate("Books")} 
-            >
-              <Left>
-                <Icon name="library-books" size={30} color={Colors.PRIMARY} />
-                <Text style={styles.text}>Indicações de Livros</Text>
-              </Left>
-            </CardItem>
-            
-            <CardItem 
-              button 
-              noBorder 
-              onPress={() => this.props.navigation.navigate("AppInfo")}
-            >
-              <Left>
-                <Icon name="information-outline" size={30} color={Colors.PRIMARY} />
-                <Text style={styles.text}>Sobre o Aplicativo</Text>
-              </Left>
-            </CardItem>
+              : null }
           </View>
         </Content>
       </Container>
