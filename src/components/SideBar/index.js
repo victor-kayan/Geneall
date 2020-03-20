@@ -16,26 +16,32 @@ import Colors from '../../../assets/colors'
 
 const routesData = [
   {
+    id: 0,
     name: "Início",
     route: "Home",
     icon: "home"
   }, {
+    id: 1,
     name: "Genética Molecular",
     route: "MolecularGenetics",
     icon: "molecule"
   }, {
+    id: 2,
     name: "Genética da Transmissão",
     route: "TransmissionGenetic",
     icon: "transition"
   }, {
+    id: 3,
     name: "Citogenética",
     route: "Cytogenetic",
     icon: "microscope"
   }, {
+    id: 4,
     name: "Indicações de Livros",
     route: "Books",
     icon: "library-books"
   }, {
+    id: 5,
     name: "Sobre o Aplicativo",
     route: "AppInfo",
     icon: "information-outline"
@@ -70,13 +76,13 @@ export default class SideBar extends Component {
               ? routesData.map(data => (
                 <>
                   <CardItem
-                    key={data.name}
+                    key={data.id}
                     button
                     noBorder
                     onPress={() => this.props.navigation.navigate(data.route)}
                   >
                     <Left>
-                      <Icon name={data.icon} size={30} color={Colors.PRIMARY} />
+                      <Icon name={data.icon} size={30} color={Colors.PRIMARY_BLUE} />
                       <Text style={styles.text}>{data.name}</Text>
                     </Left>
                   </CardItem>
@@ -112,9 +118,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.3)'
   },
   title: {
-    fontWeight: 'bold',
     fontSize: 50,
     color: '#FFF',
+    fontFamily: 'Roboto-Bold'
   },
   description: {
     fontSize: 16,
