@@ -66,7 +66,7 @@ export default class SideBar extends Component {
         >
           <ImageBackground source={Images.sideBar.drawerCover} style={styles.drawerCover}> 
             <View style={styles.darkImageCover}> 
-              <Text style={styles.title}>GeneAll</Text>
+              <Text style={styles.title}>Geneall</Text>
               <Text style={styles.description}>Aprenda genética</Text>
             </View>
           </ImageBackground>
@@ -118,16 +118,17 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.3)'
   },
   title: {
-    fontSize: 50,
     color: '#FFF',
-    fontFamily: 'Roboto-Bold'
+    fontSize: 50,
+    marginBottom: 5,
+    fontFamily: 'Mollen Personal Use-Bold',
   },
   description: {
     fontSize: 16,
     marginHorizontal: 20,
     color: '#FFF',
     textAlign: 'center',
-    fontWeight: 'bold'
+    fontFamily: 'Mollen Personal Use-Bold',
   },
   drawerImage: {
     position: "absolute",
@@ -139,7 +140,8 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    marginLeft: 20
+    marginLeft: 20,
+    color: '#333'
   },
   textDivider: {
     fontWeight: Platform.OS === "ios" ? "500" : "400",

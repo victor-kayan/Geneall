@@ -63,6 +63,9 @@
 		7F9F276587AA4FFEB435B36E /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85BFC426C32846F78C9D5C83 /* rubicon-icon-font.ttf */; };
 		CFC0FA056C094A06B38279EA /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE8EC4A14E684191AF94359A /* SimpleLineIcons.ttf */; };
 		1C077C8055704E85A6F27022 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E734046C10C4A1CAA3ADF21 /* Zocial.ttf */; };
+		7A6AE2A027D54496BB5E5E56 /* Mollen Personal Use-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B64EA48ABC4E421283795DD7 /* Mollen Personal Use-Bold.otf */; };
+		C2653F337F444A4C9A293506 /* Mollen Personal Use-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FBAA61FFEE741F69CA2BB02 /* Mollen Personal Use-Light.otf */; };
+		89EF0B67A0904D61BCB443CC /* Mollen Personal Use-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DB74F3428B554C49BC19A2DB /* Mollen Personal Use-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +148,9 @@
 		85BFC426C32846F78C9D5C83 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		CE8EC4A14E684191AF94359A /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		7E734046C10C4A1CAA3ADF21 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B64EA48ABC4E421283795DD7 /* Mollen Personal Use-Bold.otf */ = {isa = PBXFileReference; name = "Mollen Personal Use-Bold.otf"; path = "../assets/fonts/Mollen Personal Use-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7FBAA61FFEE741F69CA2BB02 /* Mollen Personal Use-Light.otf */ = {isa = PBXFileReference; name = "Mollen Personal Use-Light.otf"; path = "../assets/fonts/Mollen Personal Use-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DB74F3428B554C49BC19A2DB /* Mollen Personal Use-Regular.otf */ = {isa = PBXFileReference; name = "Mollen Personal Use-Regular.otf"; path = "../assets/fonts/Mollen Personal Use-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +308,9 @@
 				85BFC426C32846F78C9D5C83 /* rubicon-icon-font.ttf */,
 				CE8EC4A14E684191AF94359A /* SimpleLineIcons.ttf */,
 				7E734046C10C4A1CAA3ADF21 /* Zocial.ttf */,
+				B64EA48ABC4E421283795DD7 /* Mollen Personal Use-Bold.otf */,
+				7FBAA61FFEE741F69CA2BB02 /* Mollen Personal Use-Light.otf */,
+				DB74F3428B554C49BC19A2DB /* Mollen Personal Use-Regular.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -490,6 +499,9 @@
 				7F9F276587AA4FFEB435B36E /* rubicon-icon-font.ttf in Resources */,
 				CFC0FA056C094A06B38279EA /* SimpleLineIcons.ttf in Resources */,
 				1C077C8055704E85A6F27022 /* Zocial.ttf in Resources */,
+				7A6AE2A027D54496BB5E5E56 /* Mollen Personal Use-Bold.otf in Resources */,
+				C2653F337F444A4C9A293506 /* Mollen Personal Use-Light.otf in Resources */,
+				89EF0B67A0904D61BCB443CC /* Mollen Personal Use-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

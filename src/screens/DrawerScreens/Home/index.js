@@ -21,7 +21,7 @@ export default function Home({ navigation }) {
     <Container>
       <Background />
       
-      <View style={{ height: '23%' }}>
+      <View style={{ height: '20%' }}>
         <HeaderRow>
           <OpenDrawerButton onPress={ () => navigation.openDrawer() }>
             <Icon 
@@ -30,7 +30,7 @@ export default function Home({ navigation }) {
               color='#FFF'
               />
           </OpenDrawerButton>
-          <AppTitle>GeneAll</AppTitle>
+          <AppTitle>Geneall</AppTitle>
           <View style={{ width: 30 }} />
         </HeaderRow>
         <Description>Uma nova maneira de aprender genética</Description>

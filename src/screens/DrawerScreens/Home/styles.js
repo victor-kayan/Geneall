@@ -6,7 +6,7 @@ import Colors from '../../../../assets/colors';
 export const Container = styled.View`
   flex: 1;
   justify-content: space-between;
-  background: #EEE;
+  background: #FEFEFE;
 `;
 
 export const Background = styled(LinearGradient).attrs({
@@ -36,7 +36,8 @@ export const AppTitle = styled.Text`
   text-align: center;
   font-size: 40px;
   color: #FFF;
-  font-family: Roboto-Bold;
+  /* font-family: Roboto-Bold; */
+  font-family: Mollen Personal Use-Bold;
 `;
 
 export const Description = styled.Text`

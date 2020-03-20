@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
 
+import Colors from '../../../assets/colors';
+
 export const Container = styled.View``;
 
 export const Box = styled.TouchableOpacity`
@@ -28,4 +30,5 @@ export const Title = styled.Text`
   margin: 10px 10px;
   font-family: Roboto-Bold;
   font-size: 18px;
+  color: ${Colors.BLACK};
 `;
