@@ -36,7 +36,6 @@ export const AppTitle = styled.Text`
   text-align: center;
   font-size: 40px;
   color: #FFF;
-  /* font-family: Roboto-Bold; */
   font-family: Mollen Personal Use-Bold;
 `;
 

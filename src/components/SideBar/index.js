@@ -74,9 +74,8 @@ export default class SideBar extends Component {
           <View>
             { routesData && Object.keys(routesData).length
               ? routesData.map(data => (
-                <>
+                <View key={data.id} >
                   <CardItem
-                    key={data.id}
                     button
                     noBorder
                     onPress={() => this.props.navigation.navigate(data.route)}
@@ -90,7 +89,7 @@ export default class SideBar extends Component {
                   { data.route === 'Home' || data.route === 'Cytogenetic' ? 
                     <View style={styles.separator}/>
                   : null }
-                </>
+                </View>
                 ))
               : null }
           </View>

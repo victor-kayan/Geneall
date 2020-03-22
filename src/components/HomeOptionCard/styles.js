@@ -20,7 +20,7 @@ export const Box = styled.TouchableOpacity`
     height: 2;
   };
   shadowOpacity: 0.25;
-  shadowRadius: 3.84;
+  shadowRadius: 3.84px;
 
   elevation: 5;
 `;

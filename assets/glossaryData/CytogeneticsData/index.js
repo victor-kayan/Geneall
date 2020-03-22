@@ -1,0 +1,3 @@
+const CytogeneticsData = [];
+
+export { CytogeneticsData };

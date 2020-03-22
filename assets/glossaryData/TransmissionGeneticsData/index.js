@@ -1,0 +1,3 @@
+const TransmissionGeneticsData = [];
+
+export { TransmissionGeneticsData };
