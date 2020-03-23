@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
-import { View } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 
 import { 
-  Container,
+  Box,
+  TitleHeader,
   Title,
+  Divider,
   Definition,
 } from './styles';
 
@@ -15,9 +17,14 @@ export default function SectionListItem(props) {
   // }, [])
 
   return (
-    <Container>
-      <Title>{ props.item.concept }</Title>
-      <Definition>{ props.item.definition }</Definition>
-    </Container>
+    <TouchableOpacity onPress={() => {}}>
+      <Box>
+        <TitleHeader>
+          <Title>{ props.item.concept }</Title>
+          <Divider />
+        </TitleHeader>
+        <Definition>{ props.item.definition }</Definition>
+      </Box>
+    </TouchableOpacity>
   );
 }
