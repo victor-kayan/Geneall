@@ -13,9 +13,8 @@ export default function AlphabeticalList(props) {
         renderItem={ ({item }) => <SectionListItem item={item} /> }
         renderSectionHeader={ ({section}) => <SectionHeader section={section} /> }
         stickySectionHeadersEnabled
-      >
-
-      </SectionList>
+        style={{ backgroundColor: '#FEFEFE' }}
+      />
     </>
   );
 }

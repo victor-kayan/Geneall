@@ -1,5 +1,6 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
+import { LinearTextGradient } from "react-native-text-gradient";
 
 import { 
   Container,
@@ -9,7 +10,9 @@ import {
 export default function SectionHeader(props) {
   return (
     <Container>
-      <Title>{ props.section.sectionTitle }</Title>
+      <Title>
+        <Text> { props.section.sectionTitle } </Text>
+      </Title>
     </Container>
   );
 }
