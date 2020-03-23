@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, SectionList } from 'react-native';
+import { SectionList } from 'react-native';
 
-// import { Container } from './styles';
 import SectionListItem from '../SectionListItem';
 import SectionHeader from '../SectionHeader';
 
@@ -13,6 +12,7 @@ export default function AlphabeticalList(props) {
         keyExtractor={ item => item.concept }
         renderItem={ ({item }) => <SectionListItem item={item} /> }
         renderSectionHeader={ ({section}) => <SectionHeader section={section} /> }
+        stickySectionHeadersEnabled
       >
 
       </SectionList>
