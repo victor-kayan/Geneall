@@ -18,7 +18,7 @@ export default function routes() {
         name="ConceptModal" 
         component={ ConceptModal }
         options={{
-          cardStyle: { backgroundColor: 'rgba(0, 0, 0, 0.2)' },
+          cardStyle: { backgroundColor: 'rgba(0, 0, 0, 0.4)' },
           animationEnabled: true,
           cardOverlayEnabled: true,
           cardStyleInterpolator: ({ current: { progress } }) => {

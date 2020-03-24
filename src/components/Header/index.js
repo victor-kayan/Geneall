@@ -22,7 +22,7 @@ export default function Header(props) {
             name='menuunfold'
             size={30}
             color='#FFF'
-            />
+          />
         </OpenDrawerButton>
         <Title>{ props.title }</Title>
         <View style={{ width: 30 }} />

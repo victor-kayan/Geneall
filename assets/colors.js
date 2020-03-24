@@ -8,7 +8,9 @@ const colors = {
   BEIGE: '#FF8169',
   AQUA: '#62DDCA',
   
-  BLACK: '#333'
+  BLACK: '#333',
+  WHITE: '#FEFEFE',
+  GRAY: '#999',
 }
 
 export default colors;
