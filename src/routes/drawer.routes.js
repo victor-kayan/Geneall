@@ -13,7 +13,7 @@ import {
 
 const Drawer = createDrawerNavigator();
 
-export default function MainDrawerScreen() {
+export default function MainDrawer() {
   return (
     <Drawer.Navigator 
       initialRouteName="Home"
