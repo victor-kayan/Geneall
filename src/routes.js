@@ -2,9 +2,11 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import Colors from '../assets/colors';
 import SideBar from './components/SideBar';
+import ConceptModal from './components/ConceptModal';
 import {
   AppInfo,
   Books,
@@ -15,16 +17,12 @@ import {
 } from './screens/DrawerScreens';
 
 const Drawer = createDrawerNavigator();
+const MainStack = createStackNavigator();
+const RootStack = createStackNavigator();
 
-export default function Routes() {
+function MainDrawerScreen() {
   return (
-    <NavigationContainer>
-      <StatusBar 
-        barStyle="light-content" 
-        backgroundColor={Colors.PRIMARY_BLUE} 
-      />
-
-      <Drawer.Navigator 
+    <Drawer.Navigator 
         initialRouteName="Home"
         drawerContent={ props => <SideBar {...props} /> }
       >
@@ -59,6 +57,32 @@ export default function Routes() {
           options={{ drawerLabel: "Sobre o Aplicativo" }} 
         />
       </Drawer.Navigator>
+  );
+}
+
+function RootStackScreen() {
+  return (
+    <RootStack.Navigator mode="modal">
+      <RootStack.Screen
+        name="Main"
+        component={MainDrawerScreen}
+        options={{ headerShown: false }}
+      />
+      <RootStack.Screen name="ConceptModal" component={ConceptModal} options={{ headerShown: false }} />
+    </RootStack.Navigator>
+  );
+}
+
+export default function Routes() {
+  return (
+    <NavigationContainer>
+      <StatusBar 
+        barStyle="light-content" 
+        backgroundColor={Colors.PRIMARY_BLUE} 
+      />
+
+      <RootStackScreen />
+
     </NavigationContainer>
   );
 }

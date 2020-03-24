@@ -10,8 +10,12 @@ export default function AlphabeticalList(props) {
       <SectionList
         sections={ props.data }
         keyExtractor={ item => item.concept }
-        renderItem={ ({item }) => <SectionListItem item={item} /> }
-        renderSectionHeader={ ({section}) => <SectionHeader section={section} /> }
+        renderItem={ ({item}) =>  
+          <SectionListItem item={item} /> 
+        }
+        renderSectionHeader={ ({section}) => 
+          <SectionHeader section={section} /> 
+        }
         stickySectionHeadersEnabled
         style={{ backgroundColor: '#FEFEFE', marginBottom: 30 }}
       />

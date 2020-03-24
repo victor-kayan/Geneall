@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { TouchableOpacity } from 'react-native';
 
+import { useNavigation } from '@react-navigation/native';
+
 import { 
   Box,
   TitleHeader,
@@ -15,9 +17,16 @@ export default function SectionListItem(props) {
   //     console.log(site.url);
   //   })
   // }, [])
+  // 
+  // 
+  const navigation = useNavigation();
+  
+  function onOpenConcept() {
+    navigation.navigate('ConceptModal');
+  }
 
   return (
-    <TouchableOpacity onPress={() => {}}>
+    <TouchableOpacity onPress={() => onOpenConcept() }>
       <Box>
         <TitleHeader>
           <Title>{ props.item.concept }</Title>

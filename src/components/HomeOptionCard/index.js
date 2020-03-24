@@ -13,7 +13,7 @@ export default function HomeOptionCard(props) {
 
   return (
     <Container>
-      <Box onPress={ () => navigation.navigate(props.route) } >
+      <Box onPress={ () => navigation.navigate('Main', {screen: props.route}) } >
         <Image 
           source={ props.icon }
           style={{ width: 70, height: 70 }} 
