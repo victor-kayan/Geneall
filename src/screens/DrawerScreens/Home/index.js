@@ -28,7 +28,7 @@ export default function Home({ navigation }) {
               name='menuunfold'
               size={30}
               color='#FFF'
-              />
+            />
           </OpenDrawerButton>
           <AppTitle>Geneall</AppTitle>
           <View style={{ width: 30 }} />

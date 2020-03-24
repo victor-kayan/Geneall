@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { TouchableOpacity } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
@@ -17,8 +17,7 @@ export default function SectionListItem(props) {
   //     console.log(site.url);
   //   })
   // }, [])
-  // 
-  // 
+  
   const navigation = useNavigation();
   
   function onOpenConcept() {
