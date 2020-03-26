@@ -12,26 +12,23 @@ import {
 } from './styles';
 
 export default function SectionListItem(props) {
-  // useEffect(() => {
-  //   props.item.trustableSites.map(site => {
-  //     console.log(site.url);
-  //   })
-  // }, [])
-  
   const navigation = useNavigation();
-  
+  const { concept, definition, trustableSites } = props.item;
+
   function onOpenConcept() {
-    navigation.navigate('ConceptModal');
+    navigation.navigate('ConceptModal', { 
+      concept, definition, trustableSites,
+    });
   }
 
   return (
     <TouchableOpacity onPress={() => onOpenConcept() }>
       <Box>
         <TitleHeader>
-          <Title>{ props.item.concept }</Title>
+          <Title>{ concept }</Title>
           <Divider />
         </TitleHeader>
-        <Definition>{ props.item.definition }</Definition>
+        <Definition>{ definition }</Definition>
       </Box>
     </TouchableOpacity>
   );

@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import LinearGradient from 'react-native-linear-gradient';
 
 import Colors from '../../../assets/colors';
 
@@ -13,12 +12,12 @@ export const Box = styled.View`
   background: ${Colors.WHITE};
   width: 90%;
   border-radius: 10px;
-  padding: 10px 10px 20px 10px;
+  padding: 10px 15px 25px 15px;
 `;
 
 export const Header = styled.View`
   background: ${Colors.PRIMARY_GREEN};
-  margin: -10px -10px 5px -10px;
+  margin: -10px -15px 0 -15px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -35,22 +34,22 @@ export const Title = styled.Text`
 
 export const CloseModalButton = styled.TouchableOpacity``;
 
+export const Row = styled.View`
+  margin: 15px 0px 5px 0;
+  flex-direction: row;
+  align-items: center;
+`;
+
 export const Description = styled.Text`
   color: ${Colors.PRIMARY_GREEN};
-  margin: 10px 5px 0px 0;
   font-weight: bold;
   font-size: 20px;
+  margin-left: 10px;
 `;
 
 export const Definition = styled.Text`
   color: ${Colors.BLACK};
   font-size: 16px;
-  margin-bottom: 5px;
-`;
-
-export const SubDescription = styled.Text`
-  color: ${Colors.GRAY};
-  font-size: 12px;
   margin-bottom: 5px;
 `;
 

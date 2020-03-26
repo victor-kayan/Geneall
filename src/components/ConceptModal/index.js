@@ -1,31 +1,45 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { useNavigation } from '@react-navigation/native';
+import { WebView } from 'react-native-webview'; 
+import { useNavigation, useRoute } from '@react-navigation/native';
 
+import Colors from '../../../assets/colors';
 import { 
   Container,
   Box,
   Header,
   Title,
   CloseModalButton, 
+  Row,
   Description,
   Definition,
-  SubDescription,
   Link,
   ListDot,
 } from './styles';
 
 export default function ConceptModal() {
   const navigation = useNavigation();
+  const route = useRoute();
+
+  const { concept, definition, trustableSites } = route.params;
+
+  // useEffect(() => {
+  //   trustableSites.map(site => {
+  //     console.log(site.url);
+  //   })
+  // }, [])
 
   return (
     <Container>
       <Box>
         <Header>
           <View style={{ width: 30 }} />
-          <Title>Nome do conceito</Title>
+          {/* 
+          TODO: FIT THE TEXT IN IT'S CONTAINER (HEADER) 
+          */}
+          <Title>{ concept }</Title>
           <CloseModalButton onPress={ () => navigation.goBack() }>
             <Icon 
               name='close'
@@ -35,14 +49,28 @@ export default function ConceptModal() {
           </CloseModalButton>
         </Header>
         
-        <Description>Definição:</Description>
-        <Definition>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic eum voluptatem dicta et nesciunt, reprehenderit incidunt quas nihil commodi quam qui natus quaerat, ratione earum magni assumenda suscipit aliquam id!</Definition>
+        <Row>
+          <Icon 
+            name='book-outline'
+            size={24}
+            color={ Colors.PRIMARY_GREEN }
+          />
+          <Description>DEFINIÇÃO:</Description>
+        </Row>
+        <Definition>{ definition }</Definition>
+        
+        <Row>
+          <Icon 
+            name='link-variant'
+            size={24}
+            color={ Colors.PRIMARY_GREEN }
+          />
+          <Description>APRENDA MAIS:</Description>
+        </Row>
 
-        <Description>Fontes confiáveis:</Description>
-        <SubDescription>Clique nos links abaixo e aprenda muito mais sobre 'nome_do_conceito'</SubDescription>
-        <Link><ListDot>• </ListDot>https://google.com</Link>
-        <Link><ListDot>• </ListDot>https://google.com</Link>
-        <Link><ListDot>• </ListDot>https://google.com</Link>
+        { trustableSites.map(site => 
+          <Link key={site.url}><ListDot>• </ListDot>{ site.url }</Link> 
+        )}
       </Box>
     </Container>
   );
