@@ -1,20 +1,25 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { useState } from 'react';
+import { 
+  ScrollView, 
+  TouchableWithoutFeedback,
+} from 'react-native';
 
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { WebView } from 'react-native-webview'; 
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import OcticonsIcon from 'react-native-vector-icons/Octicons';
 import { useNavigation, useRoute } from '@react-navigation/native';
 
 import Colors from '../../../assets/colors';
 import { 
   Container,
-  Box,
+  Modal,
+  IconContainer,
   Header,
+  Content,
   Title,
-  CloseModalButton, 
   Row,
   Description,
   Definition,
+  LinksContainer,
   Link,
   ListDot,
 } from './styles';
@@ -22,56 +27,74 @@ import {
 export default function ConceptModal() {
   const navigation = useNavigation();
   const route = useRoute();
+  const [ isClosing, setIsClosing ] = useState(false);
 
   const { concept, definition, trustableSites } = route.params;
-
-  // useEffect(() => {
-  //   trustableSites.map(site => {
-  //     console.log(site.url);
-  //   })
-  // }, [])
-
+  
   return (
     <Container>
-      <Box>
-        <Header>
-          <View style={{ width: 30 }} />
-          {/* 
-          TODO: FIT THE TEXT IN IT'S CONTAINER (HEADER) 
-          */}
-          <Title>{ concept }</Title>
-          <CloseModalButton onPress={ () => navigation.goBack() }>
-            <Icon 
-              name='close'
-              size={30}
+      <Modal
+        isOpen
+        useNativeDriver
+        position={'bottom'}
+        onClosed={() => { navigation.goBack() }}
+        onClosingState={state => { setIsClosing(state) }}
+      >
+        <IconContainer>
+        { isClosing 
+          ? <MaterialIcon 
+              name='chevron-down'
               color='#FFF'
+              size={30}
+              style={{ marginTop: -30 }}
             />
-          </CloseModalButton>
+          : <OcticonsIcon 
+              name='dash'
+              color='#FFF'
+              size={30}
+              style={{ marginTop: -30 }}
+            /> 
+        }
+        </IconContainer>
+
+        <Header>
+          <Title>{ concept }</Title>
         </Header>
         
-        <Row>
-          <Icon 
-            name='book-outline'
-            size={24}
-            color={ Colors.PRIMARY_GREEN }
-          />
-          <Description>DEFINIÇÃO:</Description>
-        </Row>
-        <Definition>{ definition }</Definition>
-        
-        <Row>
-          <Icon 
-            name='link-variant'
-            size={24}
-            color={ Colors.PRIMARY_GREEN }
-          />
-          <Description>APRENDA MAIS:</Description>
-        </Row>
+        <Content>
+          <Row>
+            <MaterialIcon 
+              name='book-outline'
+              size={24}
+              color={ Colors.PRIMARY_GREEN }
+              />
+            <Description>DEFINIÇÃO:</Description>
+          </Row>
+          <ScrollView 
+            directionalLockEnabled={true}
+            style={{ maxHeight: '70%', height: 'auto' }}
+          >
+            <TouchableWithoutFeedback>
+              <Definition>{ definition }</Definition>
+            </TouchableWithoutFeedback>
+          </ScrollView>
+          
+          <Row>
+            <MaterialIcon 
+              name='link-variant'
+              size={24}
+              color={ Colors.PRIMARY_GREEN }
+              />
+            <Description>APRENDA MAIS:</Description>
+          </Row>
 
-        { trustableSites.map(site => 
-          <Link key={site.url}><ListDot>• </ListDot>{ site.url }</Link> 
-        )}
-      </Box>
+          <LinksContainer>
+            { trustableSites.map(site => 
+              <Link key={site.url}><ListDot>• </ListDot>{ site.url }</Link> 
+            )}
+          </LinksContainer>
+        </Content>
+      </Modal>
     </Container>
   );
 }

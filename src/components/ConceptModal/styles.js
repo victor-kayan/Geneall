@@ -1,8 +1,23 @@
 import styled from 'styled-components/native';
+import ModalBox from 'react-native-modalbox';
 
 import Colors from '../../../assets/colors';
 
 export const Container = styled.View`
+  flex: 1;
+`;
+
+export const Modal = styled(ModalBox)`
+  max-height: 90%;
+  height: auto;
+  width: 95%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+`;
+
+export const IconContainer = styled.View`
+  background: rgba(0, 0, 0, 0);
+  flex-direction: row;
   flex: 1;
   align-items: center;
   justify-content: center;
@@ -17,22 +32,27 @@ export const Box = styled.View`
 
 export const Header = styled.View`
   background: ${Colors.PRIMARY_GREEN};
-  margin: -10px -15px 0 -15px;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 `;
 
+export const Content = styled.View`
+  background: #FFF;
+  padding: 0 15px 30px 15px;
+`;
+
 export const Title = styled.Text`
   font-size: 30px;
   color: #FFF;
   font-family: Mollen Personal Use-Bold;
+  max-width: 100%;
+  width: auto;
+  text-align: center;
 `;
-
-export const CloseModalButton = styled.TouchableOpacity``;
 
 export const Row = styled.View`
   margin: 15px 0px 5px 0;
@@ -51,7 +71,10 @@ export const Definition = styled.Text`
   color: ${Colors.BLACK};
   font-size: 16px;
   margin-bottom: 5px;
+  text-align: justify;
 `;
+
+export const LinksContainer = styled.View``;
 
 export const Link = styled.Text`
   color: ${Colors.SECONDARY_BLUE};
