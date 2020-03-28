@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { 
+  StatusBar,
   ScrollView, 
+  TouchableOpacity,
   TouchableWithoutFeedback,
 } from 'react-native';
 
@@ -8,6 +10,7 @@ import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import OcticonsIcon from 'react-native-vector-icons/Octicons';
 import { useNavigation, useRoute } from '@react-navigation/native';
 
+import openLink from '../InAppBrowser';
 import Colors from '../../../assets/colors';
 import { 
   Container,
@@ -30,9 +33,11 @@ export default function ConceptModal() {
   const [ isClosing, setIsClosing ] = useState(false);
 
   const { concept, definition, trustableSites } = route.params;
-  
+
   return (
     <Container>
+      <StatusBar backgroundColor='#14242c' />
+      
       <Modal
         isOpen
         useNativeDriver
@@ -46,19 +51,19 @@ export default function ConceptModal() {
               name='chevron-down'
               color='#FFF'
               size={30}
-              style={{ marginTop: -30 }}
+              style={{ marginTop: -20 }}
             />
           : <OcticonsIcon 
               name='dash'
               color='#FFF'
               size={30}
-              style={{ marginTop: -30 }}
+              style={{ marginTop: -20 }}
             /> 
         }
         </IconContainer>
 
         <Header>
-          <Title>{ concept }</Title>
+          <Title>{concept}</Title>
         </Header>
         
         <Content>
@@ -75,7 +80,7 @@ export default function ConceptModal() {
             style={{ maxHeight: '70%', height: 'auto' }}
           >
             <TouchableWithoutFeedback>
-              <Definition>{ definition }</Definition>
+              <Definition>{definition}</Definition>
             </TouchableWithoutFeedback>
           </ScrollView>
           
@@ -90,7 +95,12 @@ export default function ConceptModal() {
 
           <LinksContainer>
             { trustableSites.map(site => 
-              <Link key={site.url}><ListDot>• </ListDot>{ site.url }</Link> 
+              <TouchableOpacity 
+                key={site.url} 
+                onPress={ () => openLink(site.url) } 
+              >
+                <Link><ListDot>• </ListDot>{site.url}</Link> 
+              </TouchableOpacity>
             )}
           </LinksContainer>
         </Content>

@@ -10,7 +10,7 @@ export const Container = styled.View`
 export const Modal = styled(ModalBox)`
   max-height: 90%;
   height: auto;
-  width: 95%;
+  width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 `;
@@ -25,7 +25,7 @@ export const IconContainer = styled.View`
 
 export const Box = styled.View`
   background: ${Colors.WHITE};
-  width: 90%;
+  width: 100%;
   border-radius: 10px;
   padding: 10px 15px 25px 15px;
 `;

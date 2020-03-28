@@ -6003,6 +6003,13 @@ react-native-linear-gradient@^2.5.6:
   resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.5.6.tgz#96215cbc5ec7a01247a20890888aa75b834d44a0"
   integrity sha512-HDwEaXcQIuXXCV70O+bK1rizFong3wj+5Q/jSyifKFLg0VWF95xh8XQgfzXwtq0NggL9vNjPKXa016KuFu+VFg==
 
+react-native-modalbox@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-modalbox/-/react-native-modalbox-2.0.0.tgz#ff3cddfb73a740e7669c2d2cc80d03cbd4890731"
+  integrity sha512-j0gJTgSGaP+VbOIWPzrHPVNEEaB/TpuY6+KlEZNtdTDEFGp8BNbsZMTr4NPMkioRgZXUvT8bClqaeD63N/BF0g==
+  dependencies:
+    prop-types "^15.5.10"
+
 react-native-reanimated@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.7.0.tgz#896db2576552ac59d288a1f6c7f00afc171f240c"
@@ -6029,10 +6036,10 @@ react-native-vector-icons@^6.6.0:
     prop-types "^15.6.2"
     yargs "^13.2.2"
 
-react-native-webview@^9.0.1:
-  version "9.0.1"
-  resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-9.0.1.tgz#81ae3aa33e446f1c93586f972092f805ab07b03a"
-  integrity sha512-BAFjItI8hrhLRtG5TeN18s53SUJjyjhH4HlVbl9trZLzJVPqG/VQmG9AaAk88hzOR8QvKf8dOg8qDuoHhs0M8g==
+react-native-webview@^9.0.2:
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-9.0.2.tgz#5a9920261758e1ced129b6def9cf657d2c352194"
+  integrity sha512-HnQ0+8jt3556QocsYTtmG3Y8eAG88GzmBodDT0PTz4TuLzPJukubj41OFkP7hytZlSdXIxyoV9A06GruyxXeLQ==
   dependencies:
     escape-string-regexp "2.0.0"
     invariant "2.2.4"

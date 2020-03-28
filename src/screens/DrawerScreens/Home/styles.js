@@ -59,6 +59,8 @@ export const CardRow = styled.View`
 `;
 
 export const CardsContainer = styled.View`
+  align-items: center;
+  justify-content: center;
 `;
 
 export const Bottom = styled.View``;
