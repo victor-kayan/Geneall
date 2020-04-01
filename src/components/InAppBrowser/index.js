@@ -11,7 +11,7 @@ export default async function openLink(url) {
         toolbarColor: Colors.PRIMARY_BLUE,
         secondaryToolbarColor: 'black',
         enableUrlBarHiding: true,
-        enableDefaultShare: true,
+        enableDefaultShare: false,
         forceCloseOnRedirection: false,
         
         // iOS Properties
