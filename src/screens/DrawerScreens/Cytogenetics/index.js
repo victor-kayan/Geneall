@@ -1,12 +1,15 @@
 import React from 'react';
-import { Text } from 'react-native';
 
+import AlphabeticalList from '../../../components/AlphabeticalList';
+import Header from '../../../components/Header';
+import { cytogeneticsData } from '../../../../assets/glossaryData/CytogeneticsData';
 import { Container } from './styles';
 
-export default function Cytogenetics() {
+export default function MolecularGenetics() {
   return (
     <Container>
-      <Text>Cytogenetics</Text>
+      <Header title='Genética Molecular' />
+      <AlphabeticalList data={cytogeneticsData} />
     </Container>
   );
 }
