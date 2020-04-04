@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { TouchableOpacity } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
@@ -11,7 +11,7 @@ import {
   Definition,
 } from './styles';
 
-export default function SectionListItem(props) {
+function SectionListItem(props) {
   const navigation = useNavigation();
   const { concept, definition, trustableSites } = props.item;
 
@@ -33,3 +33,5 @@ export default function SectionListItem(props) {
     </TouchableOpacity>
   );
 }
+
+export default memo(SectionListItem);

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { SectionList } from 'react-native';
 
 import SectionListItem from '../SectionListItem';
 import SectionHeader from '../SectionHeader';
 
-export default function AlphabeticalList(props) {
+function AlphabeticalList(props) {
   return (
     <>
       <SectionList
@@ -22,3 +22,5 @@ export default function AlphabeticalList(props) {
     </>
   );
 }
+
+export default memo(AlphabeticalList);

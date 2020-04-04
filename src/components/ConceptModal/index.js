@@ -42,6 +42,7 @@ export default function ConceptModal() {
         isOpen
         useNativeDriver
         position={'bottom'}
+        animationDuration={350}
         onClosed={() => { navigation.goBack() }}
         onClosingState={state => { setIsClosing(state) }}
       >

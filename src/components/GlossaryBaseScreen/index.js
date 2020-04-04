@@ -1,13 +1,26 @@
-import React, { useState } from 'react';
-import { Text, TextInput } from 'react-native';
+import React, { useState, useCallback } from 'react';
+import { Text } from 'react-native';
+
+import { useFocusEffect } from '@react-navigation/native';
 
 import AlphabeticalList from '../AlphabeticalList';
 import Header from '../Header';
-import { Container } from './styles';
+import { Container, Input } from './styles';
 
 export default function MolecularGenetics(props) {
   const glossaryData = props.glossary;
+
   const [ filteredData, setFilteredData ] = useState(glossaryData);
+  const [ inputValue, setInputValue ] = useState('');
+
+  useFocusEffect(
+    useCallback(() => {
+      return () => {
+        setFilteredData(glossaryData);
+        setInputValue('');
+      }
+    }, [])
+  );
 
   function filterGlossaryData(term) {
     if (term === '') {
@@ -39,10 +52,14 @@ export default function MolecularGenetics(props) {
 
   return (
     <Container>
-      <Header title={props.headerTitle} />
-      <TextInput
-        onChangeText={(term) => { filterGlossaryData(term) }}
-        placeholder="Type a message to search"
+      <Header title={ props.headerTitle } />
+      <Input
+        placeholder='Digite para pesquisar um conceito'
+        value={ inputValue }
+        onChangeText={ term => {
+          filterGlossaryData(term)
+          setInputValue(term)
+        }}
       />
 
       { filteredData.length > 0
