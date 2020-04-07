@@ -1,16 +1,19 @@
 import React from 'react';
 
 import GlossaryBaseScreen from '../../../components/GlossaryBaseScreen';
-import { molecularGeneticsData } from '../../../../assets/glossaryData/MolecularGeneticsData';
+import molecularGeneticsData from '../../../../assets/glossaryData/MolecularGeneticsData';
 import { Container } from './styles';
+
+const screenData = {
+  title: 'Genética Molecular',
+  cover: require('../../../../assets/img/sideBarBackground.jpg'),
+  glossary: molecularGeneticsData
+};
 
 export default function MolecularGenetics() {
   return (
     <Container>
-      <GlossaryBaseScreen 
-        headerTitle='Genética Molecular'
-        glossary={ molecularGeneticsData }
-      />
+      <GlossaryBaseScreen {...{ screenData }} />
     </Container>
   );
-}
+} 

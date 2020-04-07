@@ -5,7 +5,7 @@ import Colors from '../../../assets/colors';
 export const Container = styled.View`
   flex-direction: row;
   padding: 10px 20px;
-  background: #FEFEFE;
+  background: ${Colors.WHITE};
 `;
 
 export const Title = styled.Text`

@@ -286,4 +286,4 @@ const transmissionGeneticsData = [
   }
 ];
 
-export { transmissionGeneticsData };
+export default transmissionGeneticsData;

@@ -1,33 +1,33 @@
-import React from 'react';
-import { View } from 'react-native';
+import React from "react";
 
-import Icon from 'react-native-vector-icons/AntDesign';
-import { useNavigation } from '@react-navigation/native';
+import Animated from "react-native-reanimated";
 
-import { 
-  Container,
-  OpenDrawerButton,
-  Row,
-  Title
-} from './styles';
+import { HEADER_DELTA } from "../../../assets/constants";
+import {
+  AnimatedContainer,
+  AnimatedTitle
+} from './styles'
 
-export default function Header(props) {
-  const navigation = useNavigation();
+const { interpolate, Extrapolate } = Animated;
+
+export default function Header({ title, y }) {
+  const containerOpacity = interpolate(y, {
+    inputRange: [HEADER_DELTA - 16, HEADER_DELTA],
+    outputRange: [0, 1],
+    extrapolate: Extrapolate.CLAMP,
+  });
+
+  const itensOpacity = interpolate(y, {
+    inputRange: [HEADER_DELTA - 8, HEADER_DELTA - 4],
+    outputRange: [0, 1],
+    extrapolate: Extrapolate.CLAMP,
+  });
 
   return (
-    <Container>
-      <Row>
-        <OpenDrawerButton onPress={ () => navigation.openDrawer() }>
-          <Icon 
-            name='menuunfold'
-            size={30}
-            color='#FFF'
-          />
-        </OpenDrawerButton>
-        <Title>{ props.title }</Title>
-        <View style={{ width: 30 }} />
-      </Row>
-    </Container>
+    <AnimatedContainer style={{ opacity: containerOpacity }}>
+      <AnimatedTitle style={{ opacity: itensOpacity }}>
+        {title.toUpperCase()}
+      </AnimatedTitle>
+    </AnimatedContainer>
   );
-}
-  
+};

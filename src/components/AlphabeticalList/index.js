@@ -3,6 +3,7 @@ import { SectionList } from 'react-native';
 
 import SectionListItem from '../SectionListItem';
 import SectionHeader from '../SectionHeader';
+import Colors from '../../../assets/colors';
 
 function AlphabeticalList(props) {
   return (
@@ -17,7 +18,7 @@ function AlphabeticalList(props) {
           <SectionHeader section={section} /> 
         }
         stickySectionHeadersEnabled
-        style={{ backgroundColor: '#FEFEFE', marginBottom: 30 }}
+        style={{ backgroundColor: Colors.WHITE, marginBottom: 30 }}
       />
     </>
   );

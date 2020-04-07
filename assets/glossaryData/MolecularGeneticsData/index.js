@@ -429,4 +429,4 @@ const molecularGeneticsData = [
   },
 ];
 
-export { molecularGeneticsData };
+export default molecularGeneticsData;

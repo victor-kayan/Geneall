@@ -4,6 +4,8 @@ import Colors from '../../../assets/colors';
 
 export const Container = styled.View``;
 
+// TODO: Ajustar a altura e largura da Box em % e não em px.
+
 export const Box = styled.TouchableOpacity`
   width: 150px;
   height: 150px;  

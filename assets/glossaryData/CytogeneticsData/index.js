@@ -220,4 +220,4 @@ const cytogeneticsData = [
   }
 ];
 
-export { cytogeneticsData };
+export default cytogeneticsData;

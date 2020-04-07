@@ -1,71 +1,18 @@
-import React, { useState, useCallback } from 'react';
-import { Text } from 'react-native';
+import React from 'react';
 
-import { useFocusEffect } from '@react-navigation/native';
+import Animated from "react-native-reanimated";
 
-import AlphabeticalList from '../AlphabeticalList';
-import Header from '../Header';
-import { Container, Input } from './styles';
+import HeaderCover from "../HeaderCover";
+import GlossaryContent from "../GlossaryContent";
+import { Container } from './styles';
 
-export default function MolecularGenetics(props) {
-  const glossaryData = props.glossary;
-
-  const [ filteredData, setFilteredData ] = useState(glossaryData);
-  const [ inputValue, setInputValue ] = useState('');
-
-  useFocusEffect(
-    useCallback(() => {
-      return () => {
-        setFilteredData(glossaryData);
-        setInputValue('');
-      }
-    }, [])
-  );
-
-  function filterGlossaryData(term) {
-    if (term === '') {
-      setFilteredData(glossaryData);
-      return;
-    }
-
-    const searchText = term.trim().toLowerCase();
-
-    let filteredGlossary = [];
-
-    for (section of glossaryData) {
-      const filteredDataInSection = section.data.filter(item => {
-        return item.concept.trim().toLowerCase().match(searchText);
-      });
-
-      if (filteredDataInSection.length > 0) {
-        const filteredSection = { 
-          sectionTitle: section.sectionTitle, 
-          data: filteredDataInSection 
-        };
-        
-        filteredGlossary.push(filteredSection);
-      }
-    }
-
-    setFilteredData(filteredGlossary);
-  }
+export default function GlossaryBaseScreen({ screenData }) {
+  const y = new Animated.Value(0);
 
   return (
     <Container>
-      <Header title={ props.headerTitle } />
-      <Input
-        placeholder='Digite para pesquisar um conceito'
-        value={ inputValue }
-        onChangeText={ term => {
-          filterGlossaryData(term)
-          setInputValue(term)
-        }}
-      />
-
-      { filteredData.length > 0
-        ? <AlphabeticalList data={ filteredData } />
-        : <Text>Oops, nenhum item corresponde a sua pesquisa :/</Text>
-      }
+      <HeaderCover {...{ y, screenData }} />
+      <GlossaryContent {...{ y, screenData }} />
     </Container>
   );
 }

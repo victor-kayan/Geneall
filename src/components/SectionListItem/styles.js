@@ -9,18 +9,14 @@ export const Box = styled.View`
   border-radius: 10px;
 
   shadow-color: #000;
-  shadow-offset: {
-    width: 0;
-    height: 2;
-  };
+  shadow-offset: { width: 0; height: 2 };
   shadowOpacity: 0.25;
   shadowRadius: 3.84px;
 
   elevation: 5;
 `;
 
-export const TitleHeader = styled.View`
-`;
+export const TitleHeader = styled.View``;
 
 export const Title = styled.Text`
   color: ${Colors.PRIMARY_BLUE};
@@ -39,6 +35,6 @@ export const Definition = styled.Text.attrs({
   numberOfLines: 2,
   ellipsizeMode: 'tail',
 })`
-  color: #333;
+  color: #666;
   font-size: 14px;
 `;
