@@ -52,3 +52,7 @@ export const AnimatedTitle = styled(Animated.Text)`
   margin-top: -20px;
   font-family: Mollen Personal Use-Bold;
 `;
+
+export const BlankBottomMargin = styled.View`
+  height: ${MAX_HEADER_HEIGHT - 64}px;
+`;

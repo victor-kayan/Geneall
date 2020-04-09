@@ -13,7 +13,12 @@ export const INPUT_HEIGHT = 48;
 
 export default function SearchFilterInput( props ) {
   const [ inputValue, setInputValue ] = useState('');
-  const { filterInput, baseGlossary, resetState } = props;
+  const { 
+    filterInput, 
+    baseGlossary, 
+    resetState, 
+    passSearchTerm 
+  } = props;
 
   useFocusEffect(
     useCallback(() => {
@@ -53,6 +58,10 @@ export default function SearchFilterInput( props ) {
     }
 
     filterInput({ filteredGlossary, numberOfFilteredConcepts });
+
+    if (numberOfFilteredConcepts === 0) {
+      passSearchTerm(term);
+    }
   }
 
   return (
@@ -65,6 +74,7 @@ export default function SearchFilterInput( props ) {
       <Input 
         placeholder='Digite para pesquisar' 
         value={ inputValue }
+        maxLength={50}
         onChangeText={ term => {
           filterGlossaryData(term)
           setInputValue(term)

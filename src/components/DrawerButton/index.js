@@ -1,5 +1,4 @@
 import React from 'react';
-import { View } from 'react-native';
 
 import Icon from 'react-native-vector-icons/AntDesign';
 import Animated from 'react-native-reanimated';
@@ -15,8 +14,8 @@ export default function Button({ yValue } = props) {
   const navigation = useNavigation();
 
   const itensOpacity = interpolate(yValue, {
-    inputRange: [HEADER_DELTA - 150, HEADER_DELTA - 8, HEADER_DELTA - 4],
-    outputRange: [1, 0, 1],
+    inputRange: [HEADER_DELTA - 150, HEADER_DELTA - 80, HEADER_DELTA - 8, HEADER_DELTA - 4],
+    outputRange: [1, 0, 0, 1],
     extrapolate: Extrapolate.CLAMP,
   });
 

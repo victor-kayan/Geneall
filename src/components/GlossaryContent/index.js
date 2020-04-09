@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { View, ScrollView } from "react-native";
+import { View } from "react-native";
 
 import Animated from "react-native-reanimated";
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import { onScrollEvent } from "react-native-redash";
 
-import Header from "../Header/index";
+import Header from "../Header";
+import NotFound from '../NotFound';
 import DrawerButton from '../DrawerButton';
-import Colors from '../../../assets/colors';
 import SearchFilterInput, { INPUT_HEIGHT } from "../SearchFilterInput";
 import AnimatedAlphabeticalList from '../AnimatedAlphabeticalList';
 import { MAX_HEADER_HEIGHT } from "../../../assets/constants";
@@ -17,12 +16,14 @@ import {
   AnimatedGradientContainer,
   Gradient,
   TitleContainer,
-  AnimatedTitle
+  AnimatedTitle,
+  BlankBottomMargin
 } from './styles';
 
 const { interpolate, Extrapolate } = Animated;
 
 export default function GlossaryScreenContent({ screenData: { title, glossary }, y }) {
+  const [ searchTerm, setSearchTerm ] = useState('');
   const [ filteredData, setFilteredData ] = useState(glossary);
   const [ numberOfFilteredConcepts, setNumberOfFilteredConcepts ] = useState(glossary.length);
 
@@ -71,17 +72,20 @@ export default function GlossaryScreenContent({ screenData: { title, glossary },
           <Header {...{ y, title }} />
           <SearchFilterInput 
             baseGlossary={ glossary }
-            filterInput={result => onFilterInput(result)}
+            filterInput={ result => onFilterInput(result) }
+            passSearchTerm={ term => setSearchTerm(term) }
             resetState={ () => onResetState() }
           />
         </View>
 
-        <AnimatedAlphabeticalList data={ filteredData } />
+        { filteredData && numberOfFilteredConcepts > 0
+          ? <>
+              <AnimatedAlphabeticalList data={ filteredData } />
+              { numberOfFilteredConcepts === 2 && <BlankBottomMargin /> } 
+            </>
+          : <NotFound currentScreen={ title } searchTerm={ searchTerm } />
+        }
 
-        { numberOfFilteredConcepts <= 2 && numberOfFilteredConcepts !== 0
-          ? <View style={{ height: 120 }} />
-          : null
-        } 
       </AnimatedScrollContainer>
     </>
   );
