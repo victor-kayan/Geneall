@@ -16,8 +16,6 @@ export const Modal = styled(ModalBox)`
 `;
 
 export const IconContainer = styled.View`
-  background: rgba(0, 0, 0, 0);
-  flex-direction: row;
   flex: 1;
   align-items: center;
   justify-content: center;
@@ -32,7 +30,6 @@ export const Box = styled.View`
 
 export const Header = styled.View`
   background: ${Colors.PRIMARY_GREEN};
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 10px;
@@ -40,18 +37,18 @@ export const Header = styled.View`
   border-top-right-radius: 10px;
 `;
 
-export const Content = styled.View`
-  background: #FFF;
-  padding: 0 15px 30px 15px;
-`;
-
 export const Title = styled.Text`
-  font-size: 30px;
   color: #FFF;
+  font-size: 30px;
   font-family: Mollen Personal Use-Bold;
   max-width: 100%;
   width: auto;
   text-align: center;
+`;
+
+export const Content = styled.View`
+  background: #FFF;
+  padding: 15px 15px 30px 15px;
 `;
 
 export const Row = styled.View`
@@ -72,6 +69,8 @@ export const Definition = styled.Text`
   font-size: 16px;
   margin-bottom: 5px;
   text-align: justify;
+  font-family: Roboto-Regular;
+  font-weight: 100;
 `;
 
 export const LinksContainer = styled.View``;

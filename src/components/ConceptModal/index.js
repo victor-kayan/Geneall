@@ -46,36 +46,27 @@ export default function ConceptModal() {
         onClosed={() => { navigation.goBack() }}
         onClosingState={state => { setIsClosing(state) }}
       >
-        <IconContainer>
-        { isClosing 
-          ? <MaterialIcon 
-              name='chevron-down'
-              color='#FFF'
-              size={30}
-              style={{ marginTop: -20 }}
-            />
-          : <OcticonsIcon 
-              name='dash'
-              color='#FFF'
-              size={30}
-              style={{ marginTop: -20 }}
-            /> 
-        }
-        </IconContainer>
-
         <Header>
+          <IconContainer>
+          { isClosing 
+            ? <MaterialIcon 
+                name='chevron-down'
+                color='#FFF'
+                size={30}
+                style={{ marginTop: -40 }}
+              />
+            : <OcticonsIcon 
+                name='dash'
+                color='#FFF'
+                size={30}
+                style={{ marginTop: -40 }}
+              /> 
+          }
+          </IconContainer>
           <Title>{concept}</Title>
         </Header>
         
         <Content>
-          <Row>
-            <MaterialIcon 
-              name='book-outline'
-              size={24}
-              color={ Colors.PRIMARY_GREEN }
-              />
-            <Description>DEFINIÇÃO:</Description>
-          </Row>
           <ScrollView 
             directionalLockEnabled={true}
             style={{ maxHeight: '70%', height: 'auto' }}
@@ -91,7 +82,7 @@ export default function ConceptModal() {
               size={24}
               color={ Colors.PRIMARY_GREEN }
               />
-            <Description>APRENDA MAIS:</Description>
+            <Description>Aprenda mais:</Description>
           </Row>
 
           <LinksContainer>
