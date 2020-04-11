@@ -1,7 +1,7 @@
 import React from 'react';
 
 import GlossaryBaseScreen from '../../../components/GlossaryBaseScreen';
-import molecularGeneticsData from '../../../../assets/glossaryData/MolecularGeneticsData';
+import molecularGeneticsData from '../../../../assets/data/glossaries/molecularGenetics';
 import { Container } from './styles';
 
 const screenData = {

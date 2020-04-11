@@ -37,7 +37,7 @@ export const TitleMessage = styled.Text`
   color: ${Colors.BLACK};
   font-size: 20px;
   font-weight: bold;
-  text-align: center;
+  /* text-align: center; */
 `;
 
 export const MainTitle = styled(TitleMessage)`
