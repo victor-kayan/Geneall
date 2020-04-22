@@ -11,8 +11,8 @@ export const Modal = styled(ModalBox)`
   max-height: 90%;
   height: auto;
   width: 100%;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 `;
 
 export const IconContainer = styled.View`
@@ -21,20 +21,13 @@ export const IconContainer = styled.View`
   justify-content: center;
 `;
 
-export const Box = styled.View`
-  background: ${Colors.WHITE};
-  width: 100%;
-  border-radius: 10px;
-  padding: 10px 15px 25px 15px;
-`;
-
 export const Header = styled.View`
   background: ${Colors.PRIMARY_GREEN};
   justify-content: center;
   align-items: center;
   padding: 10px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 `;
 
 export const Title = styled.Text`
@@ -67,6 +60,7 @@ export const Description = styled.Text`
 export const Definition = styled.Text`
   color: ${Colors.BLACK};
   font-size: 16px;
+  line-height: 20px;
   margin-bottom: 5px;
   text-align: justify;
   font-family: Roboto-Regular;
