@@ -1,5 +1,6 @@
 import React, { useRef, useState, memo } from 'react';
 
+import { useNavigation } from '@react-navigation/native';
 import Carousel, { Pagination, ParallaxImage } from 'react-native-snap-carousel';
 
 import BOOKS_DATA from '../../../assets/data/books';
@@ -12,19 +13,27 @@ function screenWidthPercentageInPixels(percentage) {
   return Math.round(value);
 }
 
-const slideWidth = screenWidthPercentageInPixels(75);
+const slideWidth = screenWidthPercentageInPixels(65);
 const itemHorizontalMargin = screenWidthPercentageInPixels(2);
 const itemWidth = slideWidth + itemHorizontalMargin * 2;
 
 function BooksCarousel() {
+  const navigation = useNavigation();
   const carouselElement = useRef(null);
   const [ currentActiveSlide, setCurrentActiveSlide ] = useState(0);
+
+  function navigateToBookDetailsScreen(bookData) {
+    navigation.navigate('Books', { 
+      screen: 'BookDetails', 
+      params: { bookData }
+    });
+  }
 
   function _renderItem({ item }, parallaxProps) {
     return (
       <Button 
         activeOpacity={ 1 } 
-        onPress={() => { alert(`${item.title} was clicked.`)}}
+        onPress={() => { navigateToBookDetailsScreen(item) }}
       >
         <ParallaxImage
           source={ item.coverIllustration }

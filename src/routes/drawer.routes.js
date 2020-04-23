@@ -30,7 +30,18 @@ function BooksStack() {
       <Stack.Screen
         name='BookDetails'
         component={BookDetails}
-        options={{ headerTitle: 'Informações sobre o livro' }}
+        options={{ 
+          headerTitle: 'Informações sobre o livro', 
+          headerTintColor: '#FFF',
+          headerTitleAlign: 'left',
+          headerStyle: {
+            backgroundColor: '#0793C3',
+            shadowOpacity: 0,
+            shadowOffset: { height: 0 },
+            shadowRadius: 0,
+            elevation: 0
+          },
+      }}
       />
     </Stack.Navigator>
   );

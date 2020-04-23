@@ -29,6 +29,8 @@ export const styles = StyleSheet.create({
   image: {
     ...StyleSheet.absoluteFillObject,
     resizeMode: 'cover',
+    borderRadius: 10,
+    aspectRatio: 1781/2560 // Keep correct image proportion
   },
   paginationContainer: {
     paddingVertical: 8
