@@ -1,10 +1,12 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import SideBar from '../components/SideBar';
+import BookDetails from '../screens/StackScreens/BookDetails';
 import {
   AppInfo,
-  Books,
+  BooksRecommendations,
   Cytogenetics,
   Home,
   MolecularGenetics,
@@ -12,6 +14,27 @@ import {
 } from '../screens/DrawerScreens';
 
 const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
+
+function BooksStack() {
+  return (
+    <Stack.Navigator
+      initialRouteName='BooksRecommendation'
+      headerMode='screen'
+    >
+      <Stack.Screen
+        name='BooksRecommendation' 
+        component={BooksRecommendations} 
+        options={{ headerShown: false }} 
+      />
+      <Stack.Screen
+        name='BookDetails'
+        component={BookDetails}
+        options={{ headerTitle: 'Informações sobre o livro' }}
+      />
+    </Stack.Navigator>
+  );
+}
 
 export default function MainDrawer() {
   return (
@@ -41,7 +64,7 @@ export default function MainDrawer() {
       />
       <Drawer.Screen 
         name="Books" 
-        component={Books} 
+        component={BooksStack} 
         options={{ drawerLabel: "Indicações de Livros" }} 
       />
       <Drawer.Screen 

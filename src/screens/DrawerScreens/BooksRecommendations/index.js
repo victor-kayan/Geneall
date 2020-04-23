@@ -38,7 +38,7 @@ export default function Books({ navigation }) {
         <BooksCarousel />
         
         <Gradient>
-          <Button>
+          <Button onPress={() => { navigation.navigate('Books', { screen: 'BookDetails' }) }}>
             <ButtonText>Descubra mais sobre este livro</ButtonText>
           </Button>
         </Gradient>
