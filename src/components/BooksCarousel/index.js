@@ -17,7 +17,7 @@ const slideWidth = screenWidthPercentageInPixels(65);
 const itemHorizontalMargin = screenWidthPercentageInPixels(2);
 const itemWidth = slideWidth + itemHorizontalMargin * 2;
 
-function BooksCarousel() {
+function BooksCarousel(props) {
   const navigation = useNavigation();
   const carouselElement = useRef(null);
   const [ currentActiveSlide, setCurrentActiveSlide ] = useState(0);
@@ -46,6 +46,11 @@ function BooksCarousel() {
     )
   }
 
+  function updateCurentActiveSlide(slideIndex) {
+    setCurrentActiveSlide(slideIndex);
+    props.onSlideChange(slideIndex);
+  }
+
   return (
     <Container>
       <Carousel
@@ -61,7 +66,7 @@ function BooksCarousel() {
         loopClonesPerSide={ 2 }
         containerCustomStyle={ styles.slider }
         contentContainerCustomStyle={ styles.sliderContentContainer }
-        onSnapToItem={ index => setCurrentActiveSlide(index) }
+        onSnapToItem={ index => updateCurentActiveSlide(index) }
       />
       <Pagination
         dotsLength={ BOOKS_DATA.length }

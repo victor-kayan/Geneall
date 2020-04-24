@@ -2,6 +2,7 @@ import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 
+import Colors from '../../assets/colors';
 import SideBar from '../components/SideBar';
 import BookDetails from '../screens/StackScreens/BookDetails';
 import {
@@ -35,7 +36,7 @@ function BooksStack() {
           headerTintColor: '#FFF',
           headerTitleAlign: 'left',
           headerStyle: {
-            backgroundColor: '#0793C3',
+            backgroundColor: Colors.PRIMARY_BLUE,
             shadowOpacity: 0,
             shadowOffset: { height: 0 },
             shadowRadius: 0,

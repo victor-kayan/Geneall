@@ -27,6 +27,7 @@ export default function BookDetails({ route }) {
     // keywords
   } = bookData;
 
+  // * These keyword are, temporally, defined in a static way, but will be personalized to each book.
   const keywords = ['Biologia', 'Genética', 'Evolução', 'Replicação do DNA', 'Citogenética']
 
   return (
