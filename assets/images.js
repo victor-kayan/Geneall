@@ -11,4 +11,6 @@ export default images = {
     book: require('./img/book-icon.png'),
     molecule: require('./img/molecule-icon.png'),
   }
+
+  // TODO: Add the reference to all the images in this file
 };

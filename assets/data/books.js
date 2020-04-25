@@ -55,6 +55,38 @@ const booksData = [
     summary: 'Bryan Sykes, um dos mais prestigiados geneticistas mundiais, desenvolve a correlação genética para a teoria dos seis graus de separação ― entre quaisquer duas pessoas do planeta existem no máximo seis intermediários. Depois de analisar um elemento do DNA herdado pela linha materna, Sykes fez o caminho de volta aos tempos pré-históricos e descobriu que 95% de todos os europeus modernos descendem das mesmas mães ancestrais: Úrsula, Xênia, Helena, Velda, Tara, Katrine e Jasmine. As sete filhas de Eva.',
     coverIllustration: require('../img/as-sete-filhas-de-eva.jpg')
   },
+  {
+    id: 7,
+    title: 'A grande história da evolução',
+    subtitle: null,
+    author: 'Richard Dawkins',
+    summary: 'A grande história da evolução é uma peregrinação ao longo da árvore genealógica da vida. Partindo de onde estamos hoje, passamos por quarenta entroncamentos onde nos deparamos com ancestrais e peregrinos que vêm de outros ramos. O ponto de chegada situa-se há 4 bilhões de anos, na origem da vida. Ao longo do trajeto, peregrinos contam suas histórias e descortinam as maravilhas da diversidade biológica que habita este planeta e os mistérios da evolução que ainda hoje desafiam biólogos. O humano ancestral "Little Foot" investiga como surgiu a possibilidade de andarmos sobre dois pés; o gibão ajuda a entender por que não temos que fazer calças com um furo para a cauda; o camundongo deixa claro que o que torna um organismo diferente do outro não são exatamente os genes, mas como sua atividade é regulada; castores explicam o conceito de fenótipo estendido, em que a represa é uma extensão do próprio castor; e o gafanhoto discute se existem raças.',
+    coverIllustration: require('../img/a-grande-historia-da-evolucao.jpg')
+  },
+  {
+    id: 8,
+    title: '10% Humano',
+    subtitle: 'Como os micro-organismos são a chave para a saúde do corpo e da mente',
+    author: 'Alanna Collen',
+    summary: 'Há muito mais coisas em seu corpo do que você poderia imaginar. Cerca de 100 trilhões delas, para ser mais exato. Para cada célula humana em nosso organismo, há outras nove impostoras, pegando carona. Você não é formado apenas de carne e osso, sangue e músculo, mas também de bactérias e fungos. Não é um indivíduo, mas uma colônia – um ecossistema. Somos apenas 10% humanos. Neste livro instigante e revolucionário, a bióloga Alanna Collen apresenta as últimas pesquisas científicas e mostra de que forma os micróbios que habitam o corpo determinam nosso peso, o funcionamento de nosso sistema imunológico e até mesmo nossa saúde mental.',
+    coverIllustration: require('../img/10-humano.jpg')
+  },
+  {
+    id: 9,
+    title: 'O segredo está nos telômeros',
+    subtitle: null,
+    author: 'Elissa Epel',
+    summary: 'Todos desejam uma vida longa e satisfatória, viver melhor e sentir-se jovem por mais tempo, mas como a saúde das células influencia o processo de envelhecimento e a longevidade? Genes e meio ambiente. Criação, mente e natureza. A bióloga molecular Elizabeth Blackburn, premiada com o Nobel de Fisiologia e Medicina em 2009, e a psicóloga da saúde Elissa Epel uniram-se com a proposta de apresentar um novo modo de se pensar em saúde. Em O segredo está nos telômeros receita revolucionária para manter a juventude, viver mais e melhor, as pesquisadoras levam essa questão a nível celular, apresentando ao leitor os telômeros, cujo comprimento tem relação direta com a saúde. Telômeros saudáveis evitam até mesmo o câncer, e algumas práticas regulares, os Laboratórios de Renovação propostos ao final de cada capítulo, são capazes de aprimorar a saúde dessas estruturas e, consequentemente, o bem-estar cotidiano. Best-seller do The New York Times, este livro é um mergulho fascinante no coração genético das células os cromossomos e leitura imprescindível para quem deseja combater o envelhecimento prematuro, revertê-lo ou simplesmente agir na manutenção de sua vitalidade. Ou seja: é a tão aguardada receita para manter-se jovem por mais tempo.',
+    coverIllustration: require('../img/o-segredo-esta-nos-telomeros.jpg')
+  },
+  {
+    id: 10,
+    title: 'O livro dos humanos',
+    subtitle: 'A história de como nos tornamos quem somos',
+    author: 'Adam Rutherford',
+    summary: 'Em O livro dos humanos, Rutherford analisa as semelhanças e diferenças entre nós e os outros animais quando se trata de código genético, fala, habilidades cognitivas e até o conceito de arrependimento.Com uma abordagem original e bem-humorada a respeito da vida na Terra, Adam Rutherford explora uma série de características outrora consideradas exclusivamente humanas, mas que hoje sabemos que não são: diversos animais confeccionam e utilizam ferramentas para facilitar suas atividades diárias; falcões australianos pegam gravetos em chamas de incêndios florestais e os derrubam propositalmente em áreas de grama seca, criando novos focos de fogo que provocam evacuações frenéticas de presas com as quais se banqueteiam; golfinhos foram observados adotando hábitos por meio da transmissão cultural; o sexo sem fins reprodutivos certamente ocupa uma grande parcela do interesse e do tempo de muitos humanos, mas não nos torna únicos: os bonobos são ainda mais motivados, tendo relações sexuais várias vezes ao dia, com diferentes parceiros, inclusive do mesmo gênero; macacos são capazes de aprender linguagem de sinais, e o gene FOXP2, conhecido como o “gene da linguagem”, tampouco é uma exclusividade humana, estando presente no DNA de pássaros canoros e até mesmo no de ratos.',
+    coverIllustration: require('../img/o-livro-dos-humanos.jpg')
+  },
 ];
 
 export default booksData;
