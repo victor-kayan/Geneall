@@ -16,8 +16,8 @@
     "@react-navigation/stack": "^5.2.1",
     "add": "^2.0.6",
     "native-base": "^2.13.12",
-    "react": "16.9.0",
-    "react-native": "0.61.5",
+    "react": "16.11.0",
+    "react-native": "0.62.2",
     "react-native-gesture-handler": "^1.6.0",
     "react-native-inappbrowser-reborn": "^3.3.4",
     "react-native-linear-gradient": "^2.5.6",
@@ -40,7 +40,7 @@
     "eslint": "^6.8.0",
     "jest": "^25.1.0",
     "metro-react-native-babel-preset": "^0.58.0",
-    "react-test-renderer": "16.9.0"
+    "react-test-renderer": "16.11.0"
   },
   "jest": {
     "preset": "react-native"
