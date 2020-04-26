@@ -1,15 +1,10 @@
 import React, { useState, memo } from 'react';
-import { View } from 'react-native';
-
-import Icon from 'react-native-vector-icons/AntDesign';
 
 import BOOKS_DATA from '../../../../assets/data/books';
 import BooksCarousel from '../../../components/BooksCarousel';
+import DefaultHeader from '../../../components/DefaultHeader';
 import { 
   Container,
-  Header,
-  OpenDrawerButton,
-  PageTitle,
   Content,
   PageDescription,
   BoldText,
@@ -34,18 +29,7 @@ function BooksRecommendations({ navigation }) {
 
   return (
     <Container>
-      <Header>
-        <OpenDrawerButton onPress={() => { navigation.openDrawer() }}>
-          <Icon
-            name='menuunfold'
-            size={30}
-            color='#FFF'
-          />
-        </OpenDrawerButton>
-        <PageTitle>Indicações de livros</PageTitle>
-        <View style={{ width: 30 }} />
-      </Header>
-
+      <DefaultHeader pageTitle='Indicações de livros' />
       <Content>
         <PageDescription>Confira uma <BoldText>seleção especial</BoldText> de ótimos livros sobre genética para <BoldText>se aprofundar nos conteúdos</BoldText>.</PageDescription>
         

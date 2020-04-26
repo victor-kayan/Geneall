@@ -4,7 +4,7 @@ import { View } from "react-native";
 import Animated from "react-native-reanimated";
 import { onScrollEvent } from "react-native-redash";
 
-import Header from "../Header";
+import GlossaryHeader from "../GlossaryHeader";
 import NotFound from '../NotFound';
 import DrawerButton from '../DrawerButton';
 import SearchFilterInput, { INPUT_HEIGHT } from "../SearchFilterInput";
@@ -69,7 +69,7 @@ export default function GlossaryScreenContent({ screenData: { title, glossary },
         </Cover>
 
         <View style={{ marginTop: -INPUT_HEIGHT }}>
-          <Header {...{ y, title }} />
+          <GlossaryHeader {...{ y, title }} />
           <SearchFilterInput 
             baseGlossary={ glossary }
             filterInput={ result => onFilterInput(result) }
