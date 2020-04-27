@@ -43,7 +43,7 @@ const routesData = [
   }, {
     id: 5,
     name: "Sobre o Aplicativo",
-    route: "AppInfo",
+    route: "AboutThisApp",
     icon: "information-outline"
   },
 ];

@@ -1,5 +1,5 @@
 export default images = {
-  // logo: require("./img/"),
+  logo: require("./img/logo.png"),
 
   sideBar: {
     drawerCover: require("./img/sideBarBackground.jpg"),

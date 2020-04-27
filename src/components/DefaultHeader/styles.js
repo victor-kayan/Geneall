@@ -21,5 +21,5 @@ export const PageTitle = styled.Text`
 `;
 
 export const RightMargin = styled.View`
-  width: 30;
+  width: 30px;
 `;

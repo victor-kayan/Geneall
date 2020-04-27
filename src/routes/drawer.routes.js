@@ -6,7 +6,7 @@ import Colors from '../../assets/colors';
 import SideBar from '../components/SideBar';
 import BookDetails from '../screens/StackScreens/BookDetails';
 import {
-  AppInfo,
+  AboutThisApp,
   BooksRecommendations,
   Cytogenetics,
   Home,
@@ -80,8 +80,8 @@ export default function MainDrawer() {
         options={{ drawerLabel: "Indicações de Livros" }} 
       />
       <Drawer.Screen 
-        name="AppInfo" 
-        component={AppInfo} 
+        name="AboutThisApp" 
+        component={AboutThisApp} 
         options={{ drawerLabel: "Sobre o Aplicativo" }} 
       />
     </Drawer.Navigator>
