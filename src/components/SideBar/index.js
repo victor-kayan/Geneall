@@ -10,7 +10,20 @@ import {
 } from "native-base";
 
 import Images from '../../../assets/images';
-import Colors from '../../../assets/colors'
+import Colors from '../../../assets/colors';
+{/* Authors credits:
+  * Icons made by Vitaly Gorbachev (https://www.flaticon.com/authors/vitaly-gorbachev) 
+  * and by Freepik (https://www.flaticon.com/authors/freepik)
+  * from www.flaticon.com.
+*/}
+import {
+  HomeSvg,
+  MoleculeSvg,
+  DnaSvg,
+  MicroscopeSvg,
+  BookSvg,
+  InformationSvg
+} from '../../../assets/svg';
 import {
   Content,
   DrawerCover,
@@ -29,32 +42,33 @@ export default function SideBar() {
       id: 0,
       name: "Início",
       route: "Home",
-      icon: "home"
+      Icon: HomeSvg
     }, {
       id: 1,
       name: "Genética Molecular",
       route: "MolecularGenetics",
-      icon: "molecule"
+      Icon: MoleculeSvg
     }, {
       id: 2,
       name: "Genética da Transmissão",
       route: "TransmissionGenetic",
-      icon: "transition"
+      Icon: DnaSvg
     }, {
       id: 3,
       name: "Citogenética",
       route: "Cytogenetic",
-      icon: "microscope"
+      Icon: MicroscopeSvg
     }, {
       id: 4,
       name: "Indicações de Livros",
       route: "Books",
-      icon: "library-books"
-    }, {
+      Icon: BookSvg
+    }, 
+    {
       id: 5,
       name: "Sobre o Aplicativo",
       route: "AboutThisApp",
-      icon: "information-outline"
+      Icon: InformationSvg
     },
   ];
 
@@ -78,7 +92,7 @@ export default function SideBar() {
                   onPress={() => navigation.navigate(data.route)}
                 >
                   <Left>
-                    <Icon name={data.icon} size={30} color={Colors.PRIMARY_BLUE} />
+                    <data.Icon width={30} height={30} />
                     <RouteName>{data.name}</RouteName>
                   </Left>
                 </CardItem>

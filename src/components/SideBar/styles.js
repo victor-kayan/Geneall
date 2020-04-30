@@ -46,7 +46,7 @@ export const Description = styled.Text`
 export const RouteName = styled.Text`
   font-size: 16px;
   margin-left: 20px;
-  color: ${Colors.BLACK};
+  color: #666;
 `;
 
 export const Separator = styled.View`
