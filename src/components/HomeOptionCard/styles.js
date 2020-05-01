@@ -1,36 +1,50 @@
 import styled from 'styled-components/native';
+import { StyleSheet } from 'react-native';
 
 import Colors from '../../../assets/colors';
+import { SCREEN_WIDTH } from '../../../assets/constants';
 
-export const Container = styled.View``;
+export const CARD_SIZE = (SCREEN_WIDTH - SCREEN_WIDTH * 0.25) / 2;
 
-// TODO: Ajustar a altura e largura da Box em % e não em px.
-
-export const Box = styled.TouchableOpacity`
-  width: 150px;
-  height: 150px;  
+export const Container = styled.View`
+  width: ${ CARD_SIZE }px;
+  height: ${ CARD_SIZE }px;  
   background: #FFF;
-  padding: 10px;
-  margin: 25px 20px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
 
   shadow-color: #000;
   shadow-offset: {
-    width: 0;
-    height: 2;
+    width: 0px;
+    height: 2px;
   };
   shadowOpacity: 0.25;
   shadowRadius: 3.84px;
 
   elevation: 5;
+  border-radius: 10px;
+`;
+
+export const Box = styled.TouchableOpacity`
+  padding: 8%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+`;
+
+export const TextContainer = styled.View`
+  height: 45%;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Title = styled.Text`
-  text-align: center;
-  margin: 10px 10px;
-  font-family: Roboto-Bold;
-  font-size: 18px;
   color: ${Colors.BLACK};
+  font-size: 18px;
+  font-family: Roboto-Bold;
+  text-align: center;
 `;
+
+export const styles = StyleSheet.create({
+  rightMargin: {
+    marginRight: SCREEN_WIDTH * 0.05,
+  }
+});

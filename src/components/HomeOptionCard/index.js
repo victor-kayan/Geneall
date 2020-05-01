@@ -1,25 +1,26 @@
 import React from 'react';
-import { Image } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 
 import { 
   Container,
   Box,
+  TextContainer,
   Title,
+  styles
 } from './styles';
 
 export default function HomeOptionCard(props) {
   const navigation = useNavigation();
+  const { Icon, title, route, position } = props;
 
   return (
-    <Container>
-      <Box onPress={ () => navigation.navigate('Main', {screen: props.route}) } >
-        <Image 
-          source={ props.icon }
-          style={{ width: 70, height: 70 }} 
-        />
-        <Title>{props.title}</Title>
+    <Container style={ position === 'left' && styles.rightMargin }>
+      <Box onPress={ () => navigation.navigate('Main', {screen: route}) } >
+        <Icon width='55%' height='55%' />
+        <TextContainer>
+          <Title>{title}</Title>
+        </TextContainer>
       </Box>
     </Container>
   );

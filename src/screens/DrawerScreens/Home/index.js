@@ -4,6 +4,16 @@ import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 
 import HomeOptionCard from '../../../components/HomeOptionCard';
+{/* Authors credits:
+  * Icons made by surang (https://www.flaticon.com/authors/surang)
+  * from www.flaticon.com.
+*/}
+import { 
+  LaboratorySvg,
+  DnaMoleculesSvg,
+  CromosomeSvg,
+  ScienceBooksSvg
+} from '../../../../assets/svg';
 import { 
   Container,
   Background,
@@ -11,57 +21,61 @@ import {
   OpenDrawerButton,
   AppTitle,
   Description,
+  GuideTextContainer,
   GuideText,
   CardRow,
   CardsContainer,
   Bottom,
+  styles
 } from './styles';
 
 export default function Home({ navigation }) {
   return (
     <Container>
-      <Background />
-      
-      <View style={{ height: '20%' }}>
+      <Background>
         <HeaderRow>
           <OpenDrawerButton onPress={ () => navigation.openDrawer() }>
             <Icon 
               name='menuunfold'
               size={30}
               color='#FFF'
-            />
+              />
           </OpenDrawerButton>
           <AppTitle>Geneall</AppTitle>
           <View style={{ width: 30 }} />
         </HeaderRow>
         <Description>Uma nova maneira de aprender genética</Description>
-        <GuideText>Selecione uma das opções abaixo para acessar o glossário referente a esse assunto.</GuideText>
-        <GuideText>Ou, então, veja boas indicações de livros sobre os conteúdos.</GuideText>
-      </View>
+        <GuideTextContainer>
+          <GuideText>Selecione uma das opções abaixo para acessar o glossário referente a esse assunto.</GuideText>
+          <GuideText>Ou, então, veja boas indicações de livros sobre os conteúdos.</GuideText>
+        </GuideTextContainer>
+      </Background>
 
       <CardsContainer>
-        <CardRow>
-          <HomeOptionCard 
-            title='Citogenética'
-            icon={require('../../../../assets/img/cell-icon.png')}
-            route='Cytogenetic'
-          />
+        <CardRow style={ styles.bottomMargin }>
           <HomeOptionCard 
             title='Genética Molecular'
-            icon={require('../../../../assets/img/molecule-icon.png')}
             route='MolecularGenetics'
+            position='left'
+            Icon={ DnaMoleculesSvg }
           />
+          <HomeOptionCard 
+            title='Genética da Transmissão'
+            route='TransmissionGenetic'
+            Icon={ CromosomeSvg }
+            />
         </CardRow>
         <CardRow>
           <HomeOptionCard 
-            title='Genética da Transmissão'
-            icon={require('../../../../assets//img/dna-icon.png')}
-            route='TransmissionGenetic'
+            title='Citogenética'
+            route='Cytogenetic'
+            position='left'
+            Icon={ LaboratorySvg }
           />
           <HomeOptionCard 
             title='Indicações de Livros'
-            icon={require('../../../../assets/img/book-icon.png')}
             route='Books'
+            Icon={ ScienceBooksSvg }
           />
         </CardRow>
       </CardsContainer>

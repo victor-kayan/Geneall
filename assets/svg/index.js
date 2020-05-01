@@ -4,12 +4,22 @@ import DnaSvg from './dna.svg';
 import MicroscopeSvg from './microscope.svg';
 import BookSvg from './book.svg';
 import InformationSvg from './information.svg'
+import CromosomeSvg from './cromosome.svg';
+import DnaMoleculesSvg from './dna-molecules.svg';
+import LaboratorySvg from './laboratory.svg';
+import ScienceBooksSvg from './science-books.svg';
 
 export {
+  // SideBar icons
   HomeSvg,
   MoleculeSvg,
   DnaSvg,
   MicroscopeSvg,
   BookSvg,
-  InformationSvg
+  InformationSvg,
+  // Home screen icons
+  CromosomeSvg,
+  DnaMoleculesSvg,
+  LaboratorySvg,
+  ScienceBooksSvg
 };

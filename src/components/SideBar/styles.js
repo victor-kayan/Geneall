@@ -51,7 +51,7 @@ export const RouteName = styled.Text`
 
 export const Separator = styled.View`
   background-color: #CCC;
-  height: 1;
+  height: 1px;
   width: 76%;
   margin: 10px 0;
   align-self: flex-end;
