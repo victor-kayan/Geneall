@@ -1,6 +1,6 @@
 import React from 'react';
 
-import images from '../../../../assets/images';
+import { logo } from '../../../../assets/img';
 
 import DefaultHeader from '../../../components/DefaultHeader';
 import { 
@@ -24,7 +24,7 @@ export default function AboutThisApp() {
 
       <Content>
         <Body>
-          <Logo source={ images.logo } />
+          <Logo source={ logo } />
 
           <Title>Seleção de conteúdo</Title>
           <Text>•  Sadrak Lyon Dantas Pontes</Text>

@@ -1,7 +1,6 @@
 import React from "react";
 import { View } from 'react-native';
 
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native';
 import {
   Container,
@@ -9,8 +8,7 @@ import {
   Left,
 } from "native-base";
 
-import Images from '../../../assets/images';
-import Colors from '../../../assets/colors';
+import { sidebarCover } from '../../../assets/img';
 {/* Authors credits:
   * Icons made by Vitaly Gorbachev (https://www.flaticon.com/authors/vitaly-gorbachev) 
   * and by Freepik (https://www.flaticon.com/authors/freepik)
@@ -75,7 +73,7 @@ export default function SideBar() {
   return (
     <Container>
       <Content bounces={false}>
-        <DrawerCover source={Images.sideBar.drawerCover}> 
+        <DrawerCover source={sidebarCover}> 
           <DarkImageCover> 
             <Title>Geneall</Title>
             <Description>Aprenda genética</Description>
