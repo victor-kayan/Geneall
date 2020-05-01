@@ -1,7 +1,6 @@
 import React from 'react';
 
 import AlternativeGlossaryButton from './AlternativeGlossaryButton';
-import failImage from '../../../assets/img/fail.png'
 import { 
   Container,
   ImageContainer,
@@ -42,7 +41,7 @@ export default function NotFound(props) {
     <Container>
       <Row>
         <ImageContainer>
-          <FailImage source={ failImage } />
+          <FailImage />
         </ImageContainer>
         <TextWrapper>
           <TitleMessage>{`Oops...\nNenhum resultado encontrado para `}

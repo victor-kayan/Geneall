@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 
 import Colors from '../../../assets/colors';
+import { FailSvg } from '../../../assets/svg';
 import { 
   MAX_HEADER_HEIGHT, 
   SCREEN_HEIGHT, 
@@ -17,9 +18,10 @@ export const ImageContainer = styled.View`
   justify-content: center;
 `;
 
-export const FailImage = styled.Image`
-  height: ${SCREEN_HEIGHT * 0.12}px;
-  width: ${SCREEN_HEIGHT * 0.12}px;
+export const FailImage = styled(FailSvg).attrs({
+  height: SCREEN_HEIGHT * 0.12,
+  width: SCREEN_HEIGHT * 0.12
+})`
   margin-right: 20px;
 `;
 

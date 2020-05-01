@@ -8,6 +8,7 @@ import CromosomeSvg from './cromosome.svg';
 import DnaMoleculesSvg from './dna-molecules.svg';
 import LaboratorySvg from './laboratory.svg';
 import ScienceBooksSvg from './science-books.svg';
+import FailSvg from './fail.svg';
 
 export {
   // SideBar icons
@@ -21,5 +22,7 @@ export {
   CromosomeSvg,
   DnaMoleculesSvg,
   LaboratorySvg,
-  ScienceBooksSvg
+  ScienceBooksSvg,
+  // Not found icon
+  FailSvg
 };
