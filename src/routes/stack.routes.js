@@ -3,24 +3,23 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import ConceptModal from '../components/ConceptModal';
-import MainDrawer from './drawer.routes'; 
+import DrawerRoutes from './drawer.routes'; 
 
-const RootStack = createStackNavigator();
+const Stack = createStackNavigator();
 
-export default function routes() {
+export default function AppStack() {
   return (
-    <RootStack.Navigator mode="modal" screenOptions={{ headerShown: false }}>
-      <RootStack.Screen
-        name="Main"
-        component={ MainDrawer }
-      />
-      <RootStack.Screen 
+    <Stack.Navigator mode="modal" screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Main" component={ DrawerRoutes } />
+      <Stack.Screen 
         name="ConceptModal" 
         component={ ConceptModal }
         options={{
           cardStyle: { backgroundColor: 'rgba(0, 0, 0, 0.4)' },
           animationEnabled: true,
           cardOverlayEnabled: true,
+
+          // Custom modal animation
           cardStyleInterpolator: ({ current: { progress } }) => {
             return {
               cardStyle: {
@@ -40,6 +39,6 @@ export default function routes() {
           }
         }}
       />
-    </RootStack.Navigator>
+    </Stack.Navigator>
   );
 }
