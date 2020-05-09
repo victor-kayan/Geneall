@@ -1,15 +1,18 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { View, Button } from 'react-native';
 
-import { AppIntroContext } from '../../../routes/index.routes';
-// import { Container } from './styles';
+import { useIntro } from '../../../contexts/intro';
 
 export default function AppIntro() {
-  const { setUsername } = useContext(AppIntroContext);
+  const { setStoragedUsername } = useIntro();
+  
+  function handleSetUsername() {
+    setStoragedUsername('Victor Kayan');
+  }
 
   return(
     <View style={{ flex: 1 }}>
-      <Button title='Set name' onPress={() => setUsername('Victor Kayan')} />
+      <Button title='Set name' onPress={ handleSetUsername } />
     </View>
   )  
 }
