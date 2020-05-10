@@ -5,13 +5,13 @@ import React, {
   useContext
 } from 'react';
 
+import SplashScreen from 'react-native-splash-screen';
 import AsyncStorage from '@react-native-community/async-storage';
 
 const IntroContext = createContext();
 
 export function IntroProvider({ children }) {
   const [ username, setUsername ] = useState(null);
-  const [ loading, setLoading ] = useState(true);
   
   useEffect(() => {
     async function loadStoragedData() {
@@ -19,10 +19,11 @@ export function IntroProvider({ children }) {
 
       if (storagedUsername) {
         setUsername(storagedUsername);
-        setLoading(false);
-      } else if (!storagedUsername) {
-        setLoading(false);
-      }
+      } 
+
+      // Additional timeout of 300 ms to make sure that IntroRoutes will not be diplayed (flash) before AppRoutes
+      await new Promise (resolve => setTimeout(resolve, 300));
+      SplashScreen.hide();
     }
 
     loadStoragedData();
@@ -41,7 +42,6 @@ export function IntroProvider({ children }) {
     <IntroContext.Provider value={{ 
       username, 
       hasUsername: !!username,
-      loading,
       setStoragedUsername
     }}>
       { children }
