@@ -8,7 +8,7 @@ const IntroStack = createStackNavigator();
 
 export default function IntroRoutes() {
   return (
-    <IntroStack.Navigator>
+    <IntroStack.Navigator screenOptions={{ headerShown: false }}>
       <IntroStack.Screen name='AppIntro' component={AppIntroScreen} />
     </IntroStack.Navigator>
   );

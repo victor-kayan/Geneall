@@ -26,7 +26,8 @@ export function IntroProvider({ children }) {
       SplashScreen.hide();
     }
 
-    loadStoragedData();
+    // loadStoragedData();
+    SplashScreen.hide();
   }, []);
 
   async function setStoragedUsername(username) {
