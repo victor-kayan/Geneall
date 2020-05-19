@@ -12,7 +12,7 @@ const IntroContext = createContext();
 
 export function IntroProvider({ children }) {
   const [ username, setUsername ] = useState(null);
-  
+
   useEffect(() => {
     async function loadStoragedData() {
       const storagedUsername = await AsyncStorage.getItem('@Geneall:username');
@@ -26,8 +26,7 @@ export function IntroProvider({ children }) {
       SplashScreen.hide();
     }
 
-    // loadStoragedData();
-    SplashScreen.hide();
+    loadStoragedData();
   }, []);
 
   async function setStoragedUsername(username) {

@@ -40,7 +40,7 @@ export default function ConceptModal() {
       
       <Modal
         isOpen
-        useNativeDriver
+        useNativeDriver={true}
         position={'bottom'}
         animationDuration={350}
         onClosed={() => { navigation.goBack() }}

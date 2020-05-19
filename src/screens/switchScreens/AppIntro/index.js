@@ -1,9 +1,10 @@
-import React from 'react';
-import { Text, Button } from 'react-native';
+import React, { useState } from 'react';
+import { View } from 'react-native';
 
 import AppIntroHeader from '../../../components/AppIntroHeader';
 
 import { useIntro } from '../../../contexts/intro';
+import { AppIntroIllustrations } from '../../../../assets/svg';
 import { 
   Container,
   StyledSwiper,
@@ -12,14 +13,34 @@ import {
   PrevButtonText,
   NextButtonIcon,
   NextButtonText,
-  SlideContainer
+  SlideContainer,
+  Content,
+  ContentWithoutMargin,
+  Title,
+  TitleWithoutMargin,
+  Description,
+  SmallerDescription,
+  DescriptionWithMargin,
+  Bold,
+  Italic,
+  FormContainer,
+  Label,
+  Input,
+  SubmitButton,
+  ButtonBackground,
+  ButtonText,
 } from './styles';
 
 export default function AppIntro() {
-  const { setStoragedUsername } = useIntro();
+  const [ currentSlideIndex, setCurrentSlideIndex ] = useState(0);
+  const [ username, setUsername ] = useState(null);
+
+  const { setStoragedUsername, hasUsername } = useIntro();
   
-  function handleSetUsername() {
-    setStoragedUsername('Victor Kayan');
+  function handleSubmitUsername() {
+    if (!username) return;
+
+    setStoragedUsername(username);
   }
 
   function renderPrevButton() {
@@ -45,27 +66,72 @@ export default function AppIntro() {
       <StyledSwiper
         loop={false}
         loadMinimal={true}
-        showsButtons={true}
+        showsButtons={ currentSlideIndex !== 3 }
+        showsPagination={ currentSlideIndex !== 3 }
         prevButton={ renderPrevButton() }
         nextButton={ renderNextButton() }
+        onIndexChanged={ index => setCurrentSlideIndex(index) }
       >
-        {/* Slide 1 */}
+        {/* 1st slide */}
         <SlideContainer>
-          <AppIntroHeader />
-          <Text>Welcome...</Text>
+          <AppIntroHeader Illustration={AppIntroIllustrations.NatureOnScreenSvg} />
+          <Content>
+            <Title>Bem vindo ao Geneall</Title>
+            <Description>
+              Uma ferramenta para o <Bold>ensino-aprendizagem</Bold> do conteúdo de <Bold>genética</Bold> e seus conceitos na <Bold>palma de sua mão</Bold>, de forma <Bold>descomplicada</Bold>!
+            </Description>
+          </Content>
         </SlideContainer>
         
-        {/* Slide 2 */}
+        {/* 2nd slide */}
         <SlideContainer>
-          <AppIntroHeader />
-          <Text>Informations...</Text>
+          <AppIntroHeader Illustration={AppIntroIllustrations.LearningSvg} />
+          <Content>
+            <Title>Facilite seus estudos</Title>
+            <Description>
+              Consulte <Bold>glossários completos</Bold>, mesmo <Bold>sem internet</Bold>.
+            </Description>
+            <DescriptionWithMargin>
+              Acesse <Bold><Italic>links</Italic> confiáveis</Bold> para aprender mais ainda.
+            </DescriptionWithMargin>
+          </Content>
         </SlideContainer>
 
-        {/* Slide 3 */}
+        {/* 3rd slide */}
         <SlideContainer>
-          <AppIntroHeader />
-          <Text>Get started...</Text>
-          <Button title='Set name' onPress={ handleSetUsername } />
+          <AppIntroHeader Illustration={AppIntroIllustrations.ReadingBookSvg} />
+          <Content>
+            <Title>Aprofunde-se nos conteúdos</Title>
+            <Description>
+              Confira uma lista de <Bold>recomendações de livros</Bold> especialmente selecionados.
+            </Description>
+          </Content>
+        </SlideContainer>
+
+        {/* 4th slide */}
+        <SlideContainer>
+          <AppIntroHeader Illustration={AppIntroIllustrations.DoneSvg} />
+          <ContentWithoutMargin>
+            <View>
+              <TitleWithoutMargin>Vamos lá!</TitleWithoutMargin>
+              <SmallerDescription>Por favor, informe seu nome para continuarmos</SmallerDescription>
+            </View>
+            <FormContainer>
+              <Label>NOME</Label>
+              <Input 
+                placeholder='Digite seu nome'
+                autoCapitalize='words'
+                value={username}
+                autoFocus={false}
+                onChangeText={text => setUsername(text)}
+              />
+            </FormContainer>
+            <ButtonBackground>
+              <SubmitButton onPress={handleSubmitUsername}>
+                <ButtonText>COMEÇAR A APRENDER</ButtonText>
+              </SubmitButton>
+            </ButtonBackground>
+          </ContentWithoutMargin>
         </SlideContainer>
       </StyledSwiper>
     </Container>

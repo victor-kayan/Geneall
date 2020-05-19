@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { View } from 'react-native';
 
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -29,7 +29,15 @@ import {
   styles
 } from './styles';
 
+import { useIntro } from '../../../contexts/intro';
+
 export default function Home({ navigation }) {
+  const { username } = useIntro();
+
+  useEffect(() => {
+    console.log(username);
+  }, [])
+
   return (
     <Container>
       <Background>
