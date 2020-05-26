@@ -35,13 +35,13 @@ export const TextWrapper = styled.View`
 
 export const Title = styled.Text`
   color: #FFF;
-  font-size: 36px;
+  font-size: 40px;
   font-family: 'Mollen Personal Use-Bold';
 `;
 
 export const Username = styled(Title)`
-  font-size: 26px;
-  font-family: 'Roboto-Regular';
+  font-size: 30px;
+  font-family: 'Mollen Personal Use-Regular';
 `;
 
 export const RouteName = styled.Text`

@@ -13,7 +13,7 @@ function screenWidthPercentageInPixels(percentage) {
   return Math.round(value);
 }
 
-const slideWidth = screenWidthPercentageInPixels(65);
+const slideWidth = screenWidthPercentageInPixels(60);
 const itemHorizontalMargin = screenWidthPercentageInPixels(2);
 const itemWidth = slideWidth + itemHorizontalMargin * 2;
 
@@ -39,7 +39,7 @@ function BooksCarousel(props) {
           source={ item.coverIllustration }
           containerStyle={ styles.imageContainer }
           style={ styles.image }
-          parallaxFactor={ 0 }
+          parallaxFactor={ 0.5 }
           { ...parallaxProps }
         />
       </Button>

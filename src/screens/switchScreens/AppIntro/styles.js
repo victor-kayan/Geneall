@@ -94,7 +94,7 @@ export const Content = styled.View`
 
 export const SpaceBetweenContent = styled(Content)`
   justify-content: space-between;
-  margin: ${SCREEN_HEIGHT * -0.01}px 0 ${SCREEN_HEIGHT * 0.01}px 0;
+  margin: ${SCREEN_HEIGHT * -0.01}px 0 ${SCREEN_HEIGHT * 0.02}px 0;
 `;
 
 export const Title = styled.Text`
@@ -143,7 +143,7 @@ export const Label = styled(Title)`
 export const Input = styled.TextInput.attrs({
   placeholderTextColor: Colors.GRAY
 })`
-  height: 20px;
+  height: 40px;
   padding: 0;
   color: ${ Colors.BLACK };
   font-size: 16px;
