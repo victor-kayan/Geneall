@@ -9,6 +9,17 @@ import DnaMoleculesSvg from './dna-molecules.svg';
 import LaboratorySvg from './laboratory.svg';
 import ScienceBooksSvg from './science-books.svg';
 import FailSvg from './fail.svg';
+import NatureOnScreenSvg from './nature-on-screen.svg';
+import LearningSvg from './learning.svg';
+import ReadingBookSvg from './reading-book.svg';
+import DoneSvg from './done.svg'
+
+const AppIntroIllustrations = {
+  NatureOnScreenSvg,
+  LearningSvg,
+  ReadingBookSvg,
+  DoneSvg
+}
 
 export {
   // SideBar icons
@@ -24,5 +35,7 @@ export {
   LaboratorySvg,
   ScienceBooksSvg,
   // Not found icon
-  FailSvg
+  FailSvg,
+  // App intro illustrations
+  AppIntroIllustrations
 };

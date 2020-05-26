@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Colors from '../../assets/colors';
 import SideBar from '../components/SideBar';
-import BookDetails from '../screens/StackScreens/BookDetails';
+import BookDetails from '../screens/stackScreens/BookDetails';
 import {
   AboutThisApp,
   BooksRecommendations,
@@ -12,7 +12,7 @@ import {
   Home,
   MolecularGenetics,
   TransmissionGenetics,
-} from '../screens/DrawerScreens';
+} from '../screens/drawerScreens';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -48,7 +48,7 @@ function BooksStack() {
   );
 }
 
-export default function MainDrawer() {
+export default function DrawerRoutes() {
   return (
     <Drawer.Navigator 
       initialRouteName="Home"

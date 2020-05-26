@@ -1,4 +1,5 @@
 export const logo = require("./logo.png");
+export const appIcon = require('./g-icon-white.png');
 
 export const sidebarCover = require("./sidebar-background.jpg");
 
