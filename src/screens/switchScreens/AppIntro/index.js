@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { View } from 'react-native';
 
 import AppIntroHeader from '../../../components/AppIntroHeader';
-
 import { useIntro } from '../../../contexts/intro';
 import { AppIntroIllustrations } from '../../../../assets/svg';
 import { 
@@ -15,7 +14,7 @@ import {
   NextButtonText,
   SlideContainer,
   Content,
-  ContentWithoutMargin,
+  SpaceBetweenContent,
   Title,
   TitleWithoutMargin,
   Description,
@@ -35,7 +34,7 @@ export default function AppIntro() {
   const [ currentSlideIndex, setCurrentSlideIndex ] = useState(0);
   const [ username, setUsername ] = useState(null);
 
-  const { setStoragedUsername, hasUsername } = useIntro();
+  const { setStoragedUsername } = useIntro();
   
   function handleSubmitUsername() {
     if (!username) return;
@@ -74,7 +73,7 @@ export default function AppIntro() {
       >
         {/* 1st slide */}
         <SlideContainer>
-          <AppIntroHeader Illustration={AppIntroIllustrations.NatureOnScreenSvg} />
+          <AppIntroHeader Illustration={AppIntroIllustrations.NatureOnScreenSvg} animated={true} />
           <Content>
             <Title>Bem vindo ao Geneall</Title>
             <Description>
@@ -99,7 +98,7 @@ export default function AppIntro() {
 
         {/* 3rd slide */}
         <SlideContainer>
-          <AppIntroHeader Illustration={AppIntroIllustrations.ReadingBookSvg} />
+          <AppIntroHeader Illustration={AppIntroIllustrations.ReadingBookSvg} animated={true} />
           <Content>
             <Title>Aprofunde-se nos conteúdos</Title>
             <Description>
@@ -110,8 +109,8 @@ export default function AppIntro() {
 
         {/* 4th slide */}
         <SlideContainer>
-          <AppIntroHeader Illustration={AppIntroIllustrations.DoneSvg} />
-          <ContentWithoutMargin>
+          <AppIntroHeader Illustration={AppIntroIllustrations.DoneSvg} animated={true} />
+          <SpaceBetweenContent>
             <View>
               <TitleWithoutMargin>Vamos lá!</TitleWithoutMargin>
               <SmallerDescription>Por favor, informe seu nome para continuarmos</SmallerDescription>
@@ -120,9 +119,9 @@ export default function AppIntro() {
               <Label>NOME</Label>
               <Input 
                 placeholder='Digite seu nome'
-                autoCapitalize='words'
                 value={username}
                 autoFocus={false}
+                maxLength={20}
                 onChangeText={text => setUsername(text)}
               />
             </FormContainer>
@@ -131,7 +130,7 @@ export default function AppIntro() {
                 <ButtonText>COMEÇAR A APRENDER</ButtonText>
               </SubmitButton>
             </ButtonBackground>
-          </ContentWithoutMargin>
+          </SpaceBetweenContent>
         </SlideContainer>
       </StyledSwiper>
     </Container>

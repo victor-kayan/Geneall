@@ -92,10 +92,9 @@ export const Content = styled.View`
   justify-content: center;
 `;
 
-export const ContentWithoutMargin = styled(Content)`
-  margin: 0;
+export const SpaceBetweenContent = styled(Content)`
   justify-content: space-between;
-  margin: ${SCREEN_HEIGHT * 0.03}px 0;
+  margin: ${SCREEN_HEIGHT * -0.01}px 0 ${SCREEN_HEIGHT * 0.01}px 0;
 `;
 
 export const Title = styled.Text`
