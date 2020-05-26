@@ -3,7 +3,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Colors from '../../assets/colors';
-import SideBar from '../components/SideBar';
+import Sidebar from '../components/Sidebar';
 import BookDetails from '../screens/stackScreens/BookDetails';
 import {
   AboutThisApp,
@@ -52,7 +52,7 @@ export default function DrawerRoutes() {
   return (
     <Drawer.Navigator 
       initialRouteName="Home"
-      drawerContent={ props => <SideBar {...props} /> }
+      drawerContent={ props => <Sidebar {...props} /> }
     >
       <Drawer.Screen 
         name="Home" 

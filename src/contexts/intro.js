@@ -23,10 +23,10 @@ export function IntroProvider({ children }) {
 
       // Additional timeout of 300 ms to make sure that IntroRoutes will not be diplayed (flash) before AppRoutes
       await new Promise (resolve => setTimeout(resolve, 300));
+      SplashScreen.hide();
     }
     
-    // loadStoragedData();
-    SplashScreen.hide();
+    loadStoragedData();
   }, []);
 
   async function setStoragedUsername(username) {

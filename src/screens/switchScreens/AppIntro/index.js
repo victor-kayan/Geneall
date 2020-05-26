@@ -118,7 +118,7 @@ export default function AppIntro() {
             <FormContainer>
               <Label>NOME</Label>
               <Input 
-                placeholder='Digite seu nome'
+                placeholder='Digite seu primeiro nome'
                 value={username}
                 autoFocus={false}
                 maxLength={20}

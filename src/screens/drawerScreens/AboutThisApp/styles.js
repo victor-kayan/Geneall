@@ -18,8 +18,8 @@ export const Body = styled.ScrollView`
 `;
 
 export const Logo = styled.Image`
-  width: ${ SCREEN_WIDTH * 0.5 }px;
-  height: ${ (SCREEN_WIDTH * 0.5) / 1.641747573 }px; /* 1.641747573 is the aspect ratio of logo image*/
+  width: ${ SCREEN_WIDTH * 0.4 }px;
+  height: ${ (SCREEN_WIDTH * 0.4) / 1.641747573 }px; /* 1.641747573 is the aspect ratio of logo image*/
   align-self: center;
   margin: 30px 0 15px 0;
 `;

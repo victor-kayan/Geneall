@@ -33,7 +33,7 @@ export default function AboutThisApp() {
           <Title>Revisão e orientação</Title>
           <Text>•  Professor Me. Biólogo Leonardo Emmanuel</Text>
 
-          <Title>Desenvolvedores</Title>
+          <Title>Desenvolvimento</Title>
           <Text>•  Victor Kayan de Assis Lima</Text>
           <Text>•  Sadrak Lyon Dantas Pontes</Text>
         </Body>

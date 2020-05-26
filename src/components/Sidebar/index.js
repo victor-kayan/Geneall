@@ -8,6 +8,7 @@ import {
   Left,
 } from "native-base";
 
+import { useIntro } from '../../contexts/intro';
 import { sidebarCover } from '../../../assets/img';
 {/* Authors credits:
   * Icons made by Vitaly Gorbachev (https://www.flaticon.com/authors/vitaly-gorbachev) 
@@ -26,14 +27,17 @@ import {
   Content,
   DrawerCover,
   DarkImageCover,
+  TextWrapper,
   Title,
-  Description,
+  Username,
   RouteName,
   Separator
 } from './styles';
 
-export default function SideBar() {
+export default function Sidebar() {
   const navigation = useNavigation();
+
+  const { username } = useIntro();
 
   const routesData = [
     {
@@ -74,15 +78,23 @@ export default function SideBar() {
     <Container>
       <Content bounces={false}>
         <DrawerCover source={sidebarCover}> 
-          <DarkImageCover> 
-            <Title>Geneall</Title>
-            <Description>Aprenda genética</Description>
+          <DarkImageCover>
+            <TextWrapper>
+              {username ? (
+                <>
+                  <Title>Olá,</Title>
+                  <Username>{`${username}!`}</Username>
+                </>
+              ) : (
+                <Title>Olá!</Title>
+              )}
+            </TextWrapper>
           </DarkImageCover>
         </DrawerCover>
 
         <View>
-          { routesData && Object.keys(routesData).length
-            ? routesData.map(data => (
+          {routesData && Object.keys(routesData).length &&
+            routesData.map(data => (
               <View key={data.id} >
                 <CardItem
                   button
@@ -95,12 +107,12 @@ export default function SideBar() {
                   </Left>
                 </CardItem>
                 
-                { data.route === 'Home' || data.route === 'Cytogenetic' ? 
+                {(data.route === 'Home' || data.route === 'Cytogenetic') && 
                   <Separator />
-                : null }
+                }
               </View>
-              ))
-            : null }
+            ))
+          }
         </View>
       </Content>
     </Container>
