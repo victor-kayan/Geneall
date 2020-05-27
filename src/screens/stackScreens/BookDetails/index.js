@@ -11,6 +11,7 @@ import {
   SubTitle,
   Author,
   GridList,
+  GridItem,
   Keyword,
   DescriptionTitle,
   DescriptionText
@@ -24,11 +25,35 @@ export default function BookDetails({ route }) {
     author, 
     coverIllustration, 
     summary,
-    // keywords
+    keywords
   } = bookData;
 
-  // * These keyword are, temporally, defined in a static way, but will be personalized to each book.
-  const keywords = ['Biologia', 'Genética', 'Evolução', 'Replicação do DNA', 'Citogenética']
+  const gridColumns = 2;
+
+  function createGridRows(data, columns) {
+    const rows = Math.floor(data.length / columns);
+    let lastRowElements = data.length - rows * columns;
+
+    if (lastRowElements) {
+      for (let i = lastRowElements; i < columns; i++) {
+        data.push('empty');
+      }
+    }
+
+    return data;
+  }
+
+  function renderKeywords(item) {
+    if (item === 'empty') {
+      return <GridItem style={{ borderWidth: 0 }} />
+    }
+
+    return (
+      <GridItem>
+        <Keyword>{item}</Keyword>
+      </GridItem> 
+    );
+  }
 
   return (
     <Container>
@@ -42,10 +67,10 @@ export default function BookDetails({ route }) {
             { subtitle && <SubTitle>{subtitle}</SubTitle> }
             <Author>{author}</Author>
             <GridList
-              numColumns={3}
-              data={ keywords }
+              numColumns={gridColumns}
+              data={createGridRows(keywords, gridColumns)}
               keyExtractor={(item, index) => index.toString()}
-              renderItem={({ item }) => <Keyword>{item}</Keyword> }
+              renderItem={({ item }) => renderKeywords(item)}
             />
           </TextWrapper>
         </Row>

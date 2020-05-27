@@ -59,21 +59,24 @@ export const Author = styled.Text`
   color: ${Colors.GRAY};
 `;
 
-export const GridList = styled(FlatList).attrs({
-  contentContainerStyle: {
-    alignItems: 'flex-start',
-  }  
-})``;
+export const GridList = styled(FlatList)``;
+
+export const GridItem = styled.View`
+  flex-grow: 1;
+  margin: 3px 2.5px 3px 2.5px;
+  border-color: #666;
+  border-width: 0.7px;
+  border-radius: 100px;
+  /* padding: 3px; */
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const Keyword = styled.Text`
   color: #666;
   font-family: Roboto-Light;
   font-size: 12px;
-  border-color: #666;
-  border-width: 0.7px;
-  border-radius: 100px;
-  margin: 3px 5px 3px 0;
-  padding: 3px 6px;
 `;
 
 export const DescriptionTitle = styled(Title)`
