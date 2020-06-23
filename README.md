@@ -83,7 +83,7 @@ Some main libraries used in the development are named below. However, the comple
 - [react-native-splash-screen](https://github.com/crazycodeboy/react-native-splash-screen)
 
 ## :tada: Installation
-The beta Android APK can be directly downloaded [**here**](https://drive.google.com/file/d/1tpkQPPqpZnS6LB5eeDUtITC3qx-1EZIq/view?usp=sharing)!
+The beta Android APK can be directly downloaded from [**Releases page**](https://github.com/victor-kayan/Geneall/releases/tag/v1.0.0-beta)!
 
 > :bulb: By default, Android blocks the installation of applications outside Google Play Store. So, to proceed, you are going to need to allow app installs from **Unknown Sources** in your device.
 
